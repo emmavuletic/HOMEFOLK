@@ -1222,48 +1222,36 @@ function insertSnippet(type) {
 }
 
 function previewNL() {
-  const intro = document.getElementById('nl-intro').value || "Hi everyone,\n\nWelcome to this week's Homefolk listings.\n\nHappy house hunting! 🏡";
-  const subject = document.getElementById('nl-subject').value || 'New listings this Thursday';
-  const now=new Date(), dtu=(4-now.getDay()+7)%7||7, thu=new Date(now);
+  var intro = document.getElementById('nl-intro').value || "Hi everyone,\n\nWelcome to this week's Homefolk listings.\n\nHappy house hunting!";
+  var subject = document.getElementById('nl-subject').value || 'New listings this Thursday';
+  var now=new Date(), dtu=(4-now.getDay()+7)%7||7, thu=new Date(now);
   thu.setDate(now.getDate()+dtu);
-  const thuStr = thu.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-
-  // Social links
-  const ig  = document.getElementById('soc-instagram').value || '#';
-  const li  = document.getElementById('soc-linkedin').value  || '#';
-  const tw  = document.getElementById('soc-twitter').value   || '#';
-  const fb  = document.getElementById('soc-facebook').value  || '#';
-
-  const socHtml = `
-    <div style="display:flex;justify-content:center;gap:0.7rem;margin:1.2rem 0 0.5rem">
-      <a href="${ig}" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#E1306C;color:#fff;text-decoration:none;font-size:1rem">📸</a>
-      <a href="${li}" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#0077B5;color:#fff;text-decoration:none;font-size:1rem">💼</a>
-      <a href="${tw}" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#000;color:#fff;text-decoration:none;font-size:0.85rem;font-weight:700">𝕏</a>
-      <a href="${fb}" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#1877F2;color:#fff;text-decoration:none;font-size:1rem">📘</a>
-    </div>`;
-
-  document.getElementById('nl-preview-content').innerHTML = `
-    <div class="nl-header">
-      <div class="nl-header-logo">home<span>folk</span></div>
-      <p style="font-size:0.78rem;color:#7A6E62;margin-top:0.2rem">Weekly listings newsletter · ${thuStr}</p>
-      <p style="font-size:0.74rem;color:#5A5048;margin-top:0.1rem">Subject: ${subject}</p>
-    </div>
-    <div class="nl-body">
-      <div class="nl-intro-box">${intro.replace(/
-/g,'<br>')}</div>
-      <div class="nl-section-title">🏠 This week's new listings</div>
-      <div class="nl-listing-row"><span class="nl-listing-icon">🏠</span><div class="nl-listing-info"><div class="nl-listing-title">Sunny double room in Hackney flat</div><div class="nl-listing-meta">📍 Hackney, E8 · 1 bed · Bills included</div></div><span class="nl-listing-price">£850/mo</span></div>
-      <div class="nl-listing-row"><span class="nl-listing-icon">🏢</span><div class="nl-listing-info"><div class="nl-listing-title">Modern 2-bed apartment, city views</div><div class="nl-listing-meta">📍 Salford, Manchester · 2 beds · Parking</div></div><span class="nl-listing-price">£1,100/mo</span></div>
-      <div class="nl-listing-row"><span class="nl-listing-icon">🌿</span><div class="nl-listing-info"><div class="nl-listing-title">Cosy studio sublet — 6 weeks</div><div class="nl-listing-meta">📍 City Centre, Leeds · Studio · All bills incl.</div></div><span class="nl-listing-price free">Free sublet</span></div>
-      <div style="text-align:center;margin-top:1.2rem">
-        <a href="#" style="display:inline-block;background:var(--accent);color:#fff;padding:0.7rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.9rem">View all listings →</a>
-      </div>
-    </div>
-    <div class="nl-footer">
-      ${socHtml}
-      <div style="margin-top:0.8rem">Homefolk Ltd · You're receiving this because you subscribed · <span style="color:var(--accent-light);cursor:pointer">Unsubscribe</span></div>
-    </div>`;
-
+  var thuStr = thu.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  var ig  = document.getElementById('soc-instagram').value || '#';
+  var li  = document.getElementById('soc-linkedin').value  || '#';
+  var tw  = document.getElementById('soc-twitter').value   || '#';
+  var fb  = document.getElementById('soc-facebook').value  || '#';
+  var socHtml = '<div style="display:flex;justify-content:center;gap:0.7rem;margin:1.2rem 0 0.5rem">' +
+    '<a href="' + ig + '" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#E1306C;color:#fff;text-decoration:none;font-size:1rem">📸</a>' +
+    '<a href="' + li + '" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#0077B5;color:#fff;text-decoration:none;font-size:1rem">💼</a>' +
+    '<a href="' + tw + '" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#000;color:#fff;text-decoration:none;font-size:0.85rem;font-weight:700">X</a>' +
+    '<a href="' + fb + '" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#1877F2;color:#fff;text-decoration:none;font-size:1rem">📘</a>' +
+    '</div>';
+  var introHtml = intro.replace(/\n/g,'<br>');
+  document.getElementById('nl-preview-content').innerHTML =
+    '<div class="nl-header">' +
+      '<div class="nl-header-logo">home<span>folk</span></div>' +
+      '<p style="font-size:0.78rem;color:#7A6E62;margin-top:0.2rem">Weekly listings newsletter · ' + thuStr + '</p>' +
+      '<p style="font-size:0.74rem;color:#5A5048;margin-top:0.1rem">Subject: ' + subject + '</p>' +
+    '</div>' +
+    '<div class="nl-body">' +
+      '<div class="nl-intro-box">' + introHtml + '</div>' +
+      '<div class="nl-section-title">This week new listings</div>' +
+      '<div class="nl-listing-row"><span class="nl-listing-icon">🏠</span><div class="nl-listing-info"><div class="nl-listing-title">Sunny double room in Hackney flat</div><div class="nl-listing-meta">Hackney, E8 · 1 bed · Bills included</div></div><span class="nl-listing-price">£850/mo</span></div>' +
+      '<div class="nl-listing-row"><span class="nl-listing-icon">🏢</span><div class="nl-listing-info"><div class="nl-listing-title">Modern 2-bed apartment, city views</div><div class="nl-listing-meta">Salford, Manchester · 2 beds · Parking</div></div><span class="nl-listing-price">£1,100/mo</span></div>' +
+      '<div style="text-align:center;margin-top:1.2rem"><a href="#" style="display:inline-block;background:var(--accent);color:#fff;padding:0.7rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.9rem">View all listings</a></div>' +
+    '</div>' +
+    '<div class="nl-footer">' + socHtml + '<div style="margin-top:0.8rem">Homefolk Ltd · You are receiving this because you subscribed · <span style="color:var(--accent-light);cursor:pointer">Unsubscribe</span></div></div>';
   document.getElementById('nl-preview-wrap').style.display='';
   document.getElementById('nl-preview-wrap').scrollIntoView({behavior:'smooth'});
 }
