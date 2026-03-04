@@ -9,8 +9,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --cream: #FAF7F5; --warm-white: #FDF9F7; --dark: #1A1510; --mid: #5A4F45;
-  --light: #8A7E74; --accent: #1A1510; --accent-light: #4A4540;
-  --gold: #2A2520; --green: #2E7D52; --green-light: #E8F5EE;
+  --light: #8A7E74; --accent: #555F6E; --accent-light: #8896A5;
+  --gold: #3D4A5C; --green: #2E7D52; --green-light: #E8F5EE;
   --border: #E2D9CE; --card: #FFFFFF;
   --shadow-sm: 0 2px 12px rgba(26,21,16,0.07);
   --shadow: 0 6px 28px rgba(26,21,16,0.1);
@@ -26,32 +26,31 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
 /* ══ AUTH ══ */
 #auth-screen { flex-direction: row; }
 .auth-left {
-  flex: 1; background: var(--dark);
+  flex: 1; background: #F0EFED;
   display: flex; flex-direction: column; justify-content: space-between;
   padding: 3rem; position: relative; overflow: hidden;
 }
 .auth-left::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 20% 120%, rgba(26,21,16,0.35) 0%, transparent 60%),
-              radial-gradient(ellipse 60% 40% at 80% -10%, rgba(212,168,83,0.2) 0%, transparent 50%);
+  background: none;
   pointer-events: none;
 }
-.auth-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--cream); text-decoration: none; position: relative; z-index: 1; }
-.auth-logo span { color: var(--accent-light); }
+.auth-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--dark); text-decoration: none; position: relative; z-index: 1; }
+.auth-logo span { color: #C8622A; }
 .auth-left-body { position: relative; z-index: 1; }
-.auth-left-body h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.7rem); color: var(--cream); line-height: 1.15; letter-spacing: -1px; margin-bottom: 1rem; }
-.auth-left-body h2 em { font-style: italic; color: var(--accent-light); }
-.auth-left-body p { color: #9A8E82; font-size: 0.88rem; line-height: 1.7; max-width: 340px; margin-bottom: 2rem; }
+.auth-left-body h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.7rem); color: var(--dark); line-height: 1.15; letter-spacing: -1px; margin-bottom: 1rem; }
+.auth-left-body h2 em { font-style: italic; color: #C8622A; }
+.auth-left-body p { color: #5A4F45; font-size: 0.88rem; line-height: 1.7; max-width: 340px; margin-bottom: 2rem; }
 .tier-pills { display: flex; flex-direction: column; gap: 0.65rem; }
-.tier-pill { display: flex; align-items: center; gap: 0.9rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 0.85rem 1.1rem; }
+.tier-pill { display: flex; align-items: center; gap: 0.9rem; background: rgba(255,255,255,0.7); border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 0.85rem 1.1rem; }
 .tp-icon { font-size: 1.3rem; }
 .tp-info { flex: 1; }
-.tp-name { font-size: 0.86rem; font-weight: 600; color: var(--cream); }
-.tp-meta { font-size: 0.72rem; color: #7A6E62; margin-top: 0.1rem; }
+.tp-name { font-size: 0.86rem; font-weight: 600; color: var(--dark); }
+.tp-meta { font-size: 0.72rem; color: #8A7E74; margin-top: 0.1rem; }
 .tp-price { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; }
 .price-paid { color: var(--accent-light); }
 .price-free { color: #4CAF7D; }
-.auth-left-foot { font-size: 0.73rem; color: #4A4038; position: relative; z-index: 1; }
+.auth-left-foot { font-size: 0.73rem; color: #6A5F55; position: relative; z-index: 1; }
 
 .auth-right { width: 500px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 3rem 2.5rem; background: var(--warm-white); }
 .auth-box { width: 100%; max-width: 400px; }
@@ -76,7 +75,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
 /* BUTTONS */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.82rem 1.6rem; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 0.91rem; font-weight: 600; border: none; cursor: pointer; transition: transform 0.18s, box-shadow 0.18s, background 0.18s; width: 100%; }
 .btn:hover { transform: translateY(-1px); }
-.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 16px rgba(26,21,16,0.2); }
+.btn-primary { background: #1A1510; color: #fff; box-shadow: 0 4px 16px rgba(26,21,16,0.2); }
 .btn-primary:hover { background: #000000; }
 .btn-green { background: var(--green); color: #fff; box-shadow: 0 4px 16px rgba(46,125,82,0.22); }
 .btn-green:hover { background: #226040; }
@@ -85,7 +84,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
 .btn-ghost { background: transparent; color: var(--mid); border: 1.5px solid var(--border); font-size: 0.84rem; padding: 0.6rem 1.1rem; }
 .btn-ghost:hover { background: var(--cream); }
 .btn-gold { background: var(--gold); color: var(--dark); box-shadow: 0 4px 16px rgba(26,21,16,0.15); }
-.btn-gold:hover { background: #111111; }
+.btn-gold:hover { background: #2A3140; }
 .btn-sm { padding: 0.48rem 1rem; font-size: 0.8rem; border-radius: 9px; width: auto; }
 .btn-auto { width: auto; }
 
@@ -413,7 +412,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
 <div class="screen" id="dash-screen">
 
   <nav class="dash-nav">
-    <a class="dash-logo" href="#">home<span>folk</span></a>
+    <a class="dash-logo" href="#">home<span>folk</span></a><span id="admin-badge" style="display:none;background:#4A5568;color:#fff;font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:6px;margin-left:0.5rem;letter-spacing:0.5px">ADMIN</span>
     <div class="nav-right">
       <div class="notif-btn" onclick="showPanel('inbox')">🔔<div class="notif-dot" id="notif-dot"></div></div>
       <div class="user-pill" onclick="signOut()">
@@ -1010,9 +1009,28 @@ function switchTab(tab) {
     if (el) el.classList.toggle('active', x===tab);
   });
 }
+// ══ ADMIN CREDENTIALS ══
+const ADMINS = {
+  'admin@homefolk.com':  { password: 'Homefolk2025!', name: 'Admin', role: 'admin' },
+  'emma@homefolk.com':   { password: 'Homefolk2025!', name: 'Emma',  role: 'admin' },
+};
+
 function doSignIn() {
-  const email = document.getElementById('si-email').value || 'user@email.com';
-  launchDash(email.split('@')[0], '');
+  const email = (document.getElementById('si-email').value || '').trim().toLowerCase();
+  const pass  = (document.getElementById('si-pass').value || '').trim();
+  
+  // Check if admin
+  if (ADMINS[email] && ADMINS[email].password === pass) {
+    launchDash(ADMINS[email].name, '', 'admin');
+    return;
+  }
+  
+  // Regular user - accept any email/password
+  if (email) {
+    launchDash(email.split('@')[0], '', 'user');
+  } else {
+    launchDash('there', '', 'user');
+  }
 }
 function doSignUp() {
   launchDash(document.getElementById('su-first').value || 'Alex', document.getElementById('su-last').value || '');
@@ -1026,12 +1044,37 @@ function doSignUp() {
     }
   }
 }
-function launchDash(first, last) {
+let currentUserRole = 'user';
+
+function launchDash(first, last, role) {
+  role = role || 'user';
+  currentUserRole = role;
   document.getElementById('u-initials').textContent = ((first[0]||'A')+(last[0]||first[1]||'')).toUpperCase();
   document.getElementById('u-name').textContent = first + (last ? ' '+last[0]+'.' : '');
   document.getElementById('greeting-name').textContent = first;
   document.getElementById('auth-screen').classList.remove('active');
   document.getElementById('dash-screen').classList.add('active');
+
+  // Show/hide admin-only sidebar items
+  const adminItems = ['si-nl', 'si-promos'];
+  const adminLabels = document.querySelectorAll('.sb-label');
+  
+  adminItems.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.parentElement.style.display = role === 'admin' ? '' : 'none';
+  });
+
+  // Hide Newsletter and Admin labels for regular users
+  adminLabels.forEach(label => {
+    if (label.textContent.trim() === 'Newsletter' || label.textContent.trim() === 'Admin') {
+      label.style.display = role === 'admin' ? '' : 'none';
+    }
+  });
+
+  // Show admin badge in nav if admin
+  const badge = document.getElementById('admin-badge');
+  if (badge) badge.style.display = role === 'admin' ? 'inline-flex' : 'none';
+
   calcThursday(); renderPromoTable(); renderSubTable();
   showPanel('overview');
 }
@@ -1448,7 +1491,7 @@ if (document.readyState === 'loading') {
 #chat-bubble {
   position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 500;
   width: 58px; height: 58px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #000000);
+  background: linear-gradient(135deg, #555F6E, #333D4A);
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; box-shadow: 0 6px 24px rgba(26,21,16,0.4);
   transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
@@ -1600,7 +1643,7 @@ if (document.readyState === 'loading') {
   font-size: 1rem; font-weight: 700; display: flex; align-items: center;
   justify-content: center; transition: background 0.2s, transform 0.15s;
 }
-#send-btn:hover { background: #000000; transform: scale(1.05); }
+#send-btn:hover { background: #333D4A; transform: scale(1.05); }
 
 #chat-footer {
   text-align: center; font-size: 0.68rem; color: var(--light);
