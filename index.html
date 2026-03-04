@@ -1210,42 +1210,19 @@ document.addEventListener('DOMContentLoaded', () => {
 function insertSnippet(type) {
   const ta = document.getElementById('nl-intro');
   const snippets = {
-    greeting: 'Hi everyone,
-
-Welcome to this week's Homefolk newsletter! We're so glad you're here.
-
-Happy house hunting! 🏡
-
-The Homefolk team',
-    cta: '
-
-👉 Know someone looking for a home? Share this newsletter with them — it really helps.
-
-See you next Thursday!',
-    seasonal: '
-
-🌸 Spring is the perfect time to move. Whether you're looking for a flatshare, a rental or subletting your place, now is the moment to act.
-
-The Homefolk team',
-    tip: '
-
-💡 Tip of the week: Listings with 10+ photos get 3× more enquiries. Make sure your photos show natural light and every room!
-
-The Homefolk team',
+    greeting: "Hi everyone,\n\nWelcome to this week's Homefolk newsletter! We're so glad you're here.\n\nHappy house hunting! 🏡\n\nThe Homefolk team",
+    cta: "\n\n👉 Know someone looking for a home? Share this newsletter with them — it really helps.\n\nSee you next Thursday!",
+    seasonal: "\n\n🌸 Spring is the perfect time to move. Whether you're looking for a flatshare, a rental or subletting your place, now is the moment to act.\n\nThe Homefolk team",
+    tip: "\n\n💡 Tip of the week: Listings with 10+ photos get 3x more enquiries. Make sure your photos show natural light and every room!\n\nThe Homefolk team",
   };
   if (snippets[type]) {
-    ta.value += (ta.value ? '
-' : '') + snippets[type];
+    ta.value += (ta.value ? "\n" : "") + snippets[type];
     document.getElementById('nl-char-count').textContent = ta.value.length + ' characters';
   }
 }
 
 function previewNL() {
-  const intro   = document.getElementById('nl-intro').value || 'Hi everyone,
-
-Welcome to this week's Homefolk listings.
-
-Happy house hunting! 🏡';
+  const intro = document.getElementById('nl-intro').value || "Hi everyone,\n\nWelcome to this week's Homefolk listings.\n\nHappy house hunting! 🏡";
   const subject = document.getElementById('nl-subject').value || 'New listings this Thursday';
   const now=new Date(), dtu=(4-now.getDay()+7)%7||7, thu=new Date(now);
   thu.setDate(now.getDate()+dtu);
@@ -1689,9 +1666,9 @@ TONE: Warm, friendly, concise. British English. Use "£" not "$". Keep answers s
 If asked something you don't know about Homefolk specifically, say you'll pass the question to the team and they'll follow up. Never make up information.`;
 
 const QUICK_REPLY_SETS = {
-  welcome: ['How much does it cost?', 'How does Thursday debut work?', 'What's the newsletter?', 'How do I post a listing?'],
-  pricing: ['Tell me about flatshares', 'What's included in a listing?', 'Do you have promo codes?', 'Back to start'],
-  listing: ['How do I upload photos?', 'When does my listing go live?', 'Can I edit my listing?', 'Back to start'],
+  welcome: ["How much does it cost?", "How does Thursday debut work?", "What is the newsletter?", "How do I post a listing?"],
+  pricing: ["Tell me about flatshares", "What is included in a listing?", "Do you have promo codes?", "Back to start"],
+  listing: ["How do I upload photos?", "When does my listing go live?", "Can I edit my listing?", "Back to start"],
 };
 
 function toggleChat() {
@@ -1718,9 +1695,7 @@ function toggleChat() {
 
 function initChat() {
   // Welcome message from bot
-  addBotMessage("👋 Hi! I'm the Homefolk Assistant. I can help with listing prices, how Thursday debuts work, the newsletter, and anything else about Homefolk.
-
-What can I help you with?");
+  addBotMessage("👋 Hi! I am the Homefolk Assistant. I can help with listing prices, how Thursday debuts work, the newsletter, and anything else about Homefolk.\n\nWhat can I help you with?");
   showQuickReplies(QUICK_REPLY_SETS.welcome);
   // Show unread dot after 3 seconds if chat hasn't been opened
   setTimeout(() => {
