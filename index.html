@@ -358,6 +358,74 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
 }
 
 /* ANIMATIONS */
+.listing-tab { padding:0.85rem 1.2rem;border:none;background:transparent;font-family:"DM Sans",sans-serif;font-size:0.86rem;font-weight:500;color:var(--light);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;white-space:nowrap; }
+.listing-tab.active { color:var(--dark);font-weight:700;border-bottom-color:#C8622A; }
+.region-btn { background:var(--cream);border:1px solid var(--border);border-radius:20px;padding:0.3rem 0.85rem;font-family:"DM Sans",sans-serif;font-size:0.78rem;font-weight:500;color:var(--mid);cursor:pointer;transition:all 0.15s;white-space:nowrap; }
+.region-btn:hover { background:var(--dark);color:#fff;border-color:var(--dark); }
+.region-btn.active { background:var(--dark);color:#fff;border-color:var(--dark);font-weight:600; }
+@media(max-width:1100px){#listing-grid{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:700px){#listing-grid{grid-template-columns:1fr!important}#region-nav{padding:0.6rem 1rem}}
+.landing-screen { min-height:100vh; display:none; flex-direction:column; background:var(--warm-white); }
+.landing-screen.active { display:flex; }
+.landing-nav { height:62px; background:var(--card); border-bottom:1px solid var(--border); padding:0 2.5rem; display:flex; align-items:center; justify-content:space-between; }
+.landing-logo { font-family:"Playfair Display",serif; font-size:1.5rem; font-weight:700; color:var(--dark); text-decoration:none; }
+.landing-logo span { color:#C8622A; }
+.landing-hero { background:#F0EFED; padding:5rem 2.5rem 4rem; text-align:center; position:relative; overflow:hidden; }
+.landing-hero::before { content:''; position:absolute; inset:0; background:none; pointer-events:none; }
+.landing-hero h1 { font-family:"Playfair Display",serif; font-size:clamp(2.2rem,5vw,3.5rem); color:var(--dark); letter-spacing:-1.5px; line-height:1.1; margin-bottom:1rem; position:relative; }
+.landing-hero h1 em { font-style:italic; color:#C8622A; }
+.landing-hero p { color:#5A4F45; font-size:1rem; line-height:1.7; max-width:500px; margin:0 auto 2.5rem; position:relative; }
+.landing-cta-row { display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; position:relative; }
+.cta-card { background:var(--card); border-radius:20px; padding:2rem 2.2rem; width:260px; text-align:left; cursor:pointer; transition:transform 0.2s, box-shadow 0.2s; border:2px solid transparent; text-decoration:none; display:block; }
+.cta-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.cta-card.browse { border-color:rgba(255,255,255,0.1); }
+.cta-card.post { border-color:#C8622A; }
+.cta-icon { font-size:2.2rem; margin-bottom:0.8rem; display:block; }
+.cta-title { font-family:"Playfair Display",serif; font-size:1.25rem; font-weight:700; color:var(--dark); margin-bottom:0.4rem; }
+.cta-desc { font-size:0.82rem; color:var(--mid); line-height:1.55; margin-bottom:1rem; }
+.cta-btn { display:inline-block; width:100%; text-align:center; padding:0.7rem 1rem; border-radius:10px; font-family:"DM Sans",sans-serif; font-size:0.86rem; font-weight:700; border:none; cursor:pointer; }
+.cta-btn.browse { background:var(--dark); color:#fff; }
+.cta-btn.post { background:#C8622A; color:#fff; }
+.landing-listings-preview { padding:3rem 2.5rem; max-width:1080px; margin:0 auto; width:100%; }
+.landing-listings-preview h2 { font-family:"Playfair Display",serif; font-size:1.5rem; margin-bottom:0.4rem; }
+.landing-listings-preview p { color:var(--mid); font-size:0.86rem; margin-bottom:1.8rem; }
+.preview-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+.preview-blur { position:relative; }
+.preview-blur::after { content:"Sign in to see contact details"; position:absolute; bottom:0; left:0; right:0; height:60%; background:linear-gradient(to bottom, transparent, var(--warm-white)); border-radius:0 0 18px 18px; display:flex; align-items:flex-end; justify-content:center; padding-bottom:1rem; font-size:0.78rem; color:var(--mid); font-weight:600; }
+.landing-stats { background:var(--cream); border-top:1px solid var(--border); padding:2rem 2.5rem; display:flex; justify-content:center; gap:4rem; flex-wrap:wrap; }
+.l-stat { text-align:center; }
+.l-stat .num { font-family:"Playfair Display",serif; font-size:2rem; font-weight:700; color:var(--dark); }
+.l-stat .lbl { font-size:0.78rem; color:var(--mid); margin-top:0.2rem; }
+@media(max-width:700px){ .landing-cta-row{flex-direction:column;align-items:center} .cta-card{width:100%;max-width:320px} .preview-grid{grid-template-columns:1fr} .landing-stats{gap:2rem} }
+/* STAR SIGN MULTI SELECT */
+.star-sign-wrap { position:relative; }
+.star-sign-trigger { width:100%; background:var(--card); border:1.5px solid var(--border); border-radius:12px; padding:0.75rem 1rem; font-family:"DM Sans",sans-serif; font-size:0.88rem; color:var(--dark); cursor:pointer; text-align:left; display:flex; align-items:center; justify-content:space-between; transition:border-color 0.2s; }
+.star-sign-trigger:hover { border-color:var(--accent); }
+.star-sign-dropdown { display:none; position:absolute; top:calc(100% + 6px); left:0; right:0; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:0.6rem; z-index:100; box-shadow:var(--shadow-lg); max-height:280px; overflow-y:auto; }
+.star-sign-dropdown.open { display:block; }
+.star-sign-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0.3rem; }
+.sign-option { display:flex; align-items:center; gap:0.4rem; padding:0.4rem 0.5rem; border-radius:8px; cursor:pointer; font-size:0.8rem; color:var(--mid); transition:background 0.15s; }
+.sign-option:hover { background:var(--cream); }
+.sign-option input[type=checkbox] { accent-color:#C8622A; width:14px; height:14px; cursor:pointer; }
+.sign-option.selected { background:#FEF0E8; color:#C8622A; font-weight:500; }
+.sign-badge { display:inline-flex; align-items:center; gap:0.3rem; background:#FEF0E8; border:1px solid #F5D5C0; border-radius:20px; padding:0.2rem 0.6rem; font-size:0.75rem; color:#C8622A; }
+
+/* STAR SIGN MULTI-SELECT */
+.star-select-wrap { position:relative; }
+.star-select-btn { width:100%; background:var(--warm-white); border:1.5px solid var(--border); border-radius:12px; padding:0.7rem 1rem; font-family:"DM Sans",sans-serif; font-size:0.86rem; color:var(--dark); cursor:pointer; text-align:left; display:flex; align-items:center; justify-content:space-between; }
+.star-select-btn:hover { border-color:#C8622A; }
+.star-dropdown { display:none; position:absolute; top:calc(100% + 4px); left:0; right:0; background:var(--card); border:1.5px solid var(--border); border-radius:14px; padding:0.6rem; z-index:50; box-shadow:var(--shadow); max-height:280px; overflow-y:auto; }
+.star-dropdown.open { display:block; }
+.star-option { display:flex; align-items:center; gap:0.7rem; padding:0.5rem 0.6rem; border-radius:9px; cursor:pointer; font-size:0.85rem; transition:background 0.15s; }
+.star-option:hover { background:var(--cream); }
+.star-option input[type=checkbox] { accent-color:#C8622A; width:15px; height:15px; cursor:pointer; }
+.star-option .sign-emoji { font-size:1.1rem; }
+
+/* SOCIAL LINKS ON PROFILE */
+.social-link-row { display:flex; align-items:center; gap:0.8rem; margin-bottom:0.7rem; }
+.social-link-row .social-icon { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+.social-link-row input { flex:1; }
+
 @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
 @keyframes pop { from { transform:scale(0.5); opacity:0; } to { transform:scale(1); opacity:1; } }
 @keyframes slideIn { from { opacity:0; transform:translateX(10px); } to { opacity:1; transform:translateX(0); } }
@@ -383,13 +451,60 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
 </head>
 <body>
 
+<!-- ══════════════ LANDING SCREEN ══════════════ -->
+<div class="landing-screen active" id="landing-screen">
+
+  <nav class="landing-nav">
+    <a class="landing-logo" href="#">home<span>folk</span></a>
+    <div style="display:flex;gap:0.6rem">
+      <button onclick="goToBrowse()" style="background:transparent;border:1.5px solid var(--border);border-radius:10px;padding:0.45rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:600;cursor:pointer;color:var(--mid)">Browse listings</button>
+      <button onclick="goToPost()" style="background:#C8622A;border:none;border-radius:10px;padding:0.45rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:600;cursor:pointer;color:#fff">Post a listing</button>
+    </div>
+  </nav>
+
+  <div class="landing-hero">
+    <h1>The Find your<br><em>place.</em></h1>
+    <p>The right home is out there. Something quieter, warmer, more <em>you</em>. Browse free — sign up to contact any landlord directly.</p>
+    <div class="landing-cta-row">
+      <div class="cta-card browse" onclick="goToBrowse()">
+        <span class="cta-icon">🔍</span>
+        <div class="cta-title">Browse listings</div>
+        <div class="cta-desc">See all available flatshares, sublets and rentals. No login needed to browse.</div>
+        <div class="cta-btn browse">Browse for free →</div>
+      </div>
+      <div class="cta-card post" onclick="goToPost()">
+        <span class="cta-icon">🏠</span>
+        <div class="cta-title">Post a listing</div>
+        <div class="cta-desc">List your flatshare, rental or sublet. Reach mindful renters every Thursday.</div>
+        <div class="cta-btn post">Post a listing →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preview listings -->
+  <div class="landing-listings-preview">
+    <h2>This week's listings</h2>
+    <p>New homes added every Thursday · Unlock contacts from £15/month</p>
+    <div class="preview-grid" id="landing-preview-grid"></div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="landing-stats">
+    <div class="l-stat"><div class="num">✨</div><div class="lbl">Mindful renters, real homes</div></div>
+    <div class="l-stat"><div class="num">£10</div><div class="lbl">To post a flatshare</div></div>
+    <div class="l-stat"><div class="num">£15</div><div class="lbl">To contact landlords / month</div></div>
+    <div class="l-stat"><div class="num">Thursday</div><div class="lbl">New listings every week</div></div>
+  </div>
+
+</div>
+
 <!-- ══════════════ AUTH SCREEN ══════════════ -->
-<div class="screen active" id="auth-screen">
+<div class="screen" id="auth-screen" style="display:none">
   <div class="auth-left">
     <a class="auth-logo" href="#">home<span>folk</span></a>
     <div class="auth-left-body">
-      <h2>List your home,<br>find the <em>perfect</em><br>tenant</h2>
-      <p>Create a free account to post your listing. Every listing debuts in our Thursday newsletter to 8,100+ renters — the same day it goes live.</p>
+      <h2>List your home,<br>find the <em>perfect</em><br>home.</h2>
+      <p>Create a free account to post your listing. Every listing debuts in our Thursday newsletter to renters — the same day it goes live.</p>
       <div class="tier-pills">
         <div class="tier-pill">
           <span class="tp-icon">🏠</span>
@@ -411,19 +526,19 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
     <div>
       <!-- Mini listing teasers -->
       <div style="margin-bottom:1.2rem">
-        <div style="font-size:0.7rem;font-weight:700;color:#6A5E54;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:0.6rem">🏠 Latest listings</div>
+        <div style="font-size:0.85rem;font-weight:700;color:#1A1510;letter-spacing:0.3px;margin-bottom:0.8rem;margin-top:1.8rem">🏠 Latest listings</div>
         <div style="display:flex;flex-direction:column;gap:0.5rem">
           <div style="background:rgba(255,255,255,0.6);border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:0.7rem 0.9rem;display:flex;align-items:center;justify-content:space-between">
-            <div><div style="font-size:0.8rem;font-weight:600;color:#1A1510">Sunny room · Hackney</div><div style="font-size:0.7rem;color:#6A5E54">🛏 1 bed · Bills incl.</div></div>
-            <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#C8622A">£850<span style="font-size:0.65rem;font-weight:400;color:#8A7E74">/mo</span></div>
+            <div><div style="font-size:0.92rem;font-weight:600;color:#1A1510">Sunny room · Hackney</div><div style="font-size:0.78rem;color:#6A5E54">🛏 1 bed · Bills incl.</div></div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#C8622A">£850<span style="font-size:0.65rem;font-weight:400;color:#8A7E74">/mo</span></div>
           </div>
           <div style="background:rgba(255,255,255,0.6);border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:0.7rem 0.9rem;display:flex;align-items:center;justify-content:space-between">
-            <div><div style="font-size:0.8rem;font-weight:600;color:#1A1510">Modern 2-bed · Salford</div><div style="font-size:0.7rem;color:#6A5E54">🛏 2 beds · Parking incl.</div></div>
-            <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#C8622A">£1,100<span style="font-size:0.65rem;font-weight:400;color:#8A7E74">/mo</span></div>
+            <div><div style="font-size:0.92rem;font-weight:600;color:#1A1510">Modern 2-bed · Salford</div><div style="font-size:0.78rem;color:#6A5E54">🛏 2 beds · Parking incl.</div></div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#C8622A">£1,100<span style="font-size:0.65rem;font-weight:400;color:#8A7E74">/mo</span></div>
           </div>
           <div style="background:rgba(255,255,255,0.6);border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:0.7rem 0.9rem;display:flex;align-items:center;justify-content:space-between">
-            <div><div style="font-size:0.8rem;font-weight:600;color:#1A1510">Studio sublet · Leeds</div><div style="font-size:0.7rem;color:#6A5E54">🌿 6 weeks · All bills incl.</div></div>
-            <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#2E7D52">£650<span style="font-size:0.65rem;font-weight:400;color:#8A7E74">/mo</span></div>
+            <div><div style="font-size:0.92rem;font-weight:600;color:#1A1510">Studio sublet · Leeds</div><div style="font-size:0.78rem;color:#6A5E54">🌿 6 weeks · All bills incl.</div></div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#2E7D52">£650<span style="font-size:0.65rem;font-weight:400;color:#8A7E74">/mo</span></div>
           </div>
         </div>
       </div>
@@ -478,7 +593,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
           Subscribe to the Thursday newsletter — new listings delivered every week
         </label>
         <button class="btn btn-primary" onclick="doSignUp()">Create my account →</button>
-        <p class="auth-foot">By signing up you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a></p>
+        <p class="auth-foot">By signing up you agree to our <a onclick="showTerms()" style="cursor:pointer">Terms &amp; Privacy Policy</a></p>
       </div>
 
       <!-- FORGOT -->
@@ -524,6 +639,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
       <div class="sb-label">Admin</div>
       <button class="sb-item" id="si-promos" onclick="showPanel('promos')"><span class="sb-icon">🏷️</span> Promo codes</button>
       <div class="sb-label">Account</div>
+      <button class="sb-item" id="si-tenant" onclick="showPanel('tenant')"><span class="sb-icon">🔍</span> Renter account</button>
       <button class="sb-item" id="si-profile" onclick="showPanel('profile')"><span class="sb-icon">👤</span> Profile</button>
       <button class="sb-item" id="si-billing" onclick="showPanel('billing')"><span class="sb-icon">💳</span> Billing</button>
       <div class="sb-foot">
@@ -608,7 +724,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
                 <li><span class="chk">✓</span> 7-day listing</li>
                 <li><span class="chk">✓</span> Top of search results</li>
                 <li><span class="chk">✓</span> Enquiry inbox</li>
-                <li><span class="chk">✓</span> Thursday newsletter to 8,100+</li>
+                <li><span class="chk">✓</span> Thursday newsletter to renters</li>
               </ul>
               <button class="btn btn-primary btn-sm" style="width:100%">Select →</button>
             </div>
@@ -623,7 +739,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
                 <li><span class="chk">✓</span> 7-day listing</li>
                 <li><span class="chk">✓</span> Top of search results</li>
                 <li><span class="chk">✓</span> Enquiry inbox</li>
-                <li><span class="chk">✓</span> Thursday newsletter to 8,100+</li>
+                <li><span class="chk">✓</span> Thursday newsletter to renters</li>
               </ul>
               <button class="btn btn-primary btn-sm" style="width:100%">Select →</button>
             </div>
@@ -639,7 +755,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
                 <li><span class="chk-g">✓</span> 7-day listing</li>
                 <li><span class="chk-g">✓</span> Appears in search</li>
                 <li><span class="chk-g">✓</span> Enquiry form</li>
-                <li><span class="chk-g">✓</span> Thursday newsletter to 8,100+</li>
+                <li><span class="chk-g">✓</span> Thursday newsletter to renters</li>
               </ul>
               <button class="btn btn-green btn-sm" style="width:100%">Select →</button>
             </div>
@@ -671,6 +787,96 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
             </div>
             <div class="field"><label>Description</label><textarea id="f-desc" placeholder="Tell renters what makes your home special — the vibe, neighbourhood, transport links, house rules, ideal tenant…"></textarea></div>
             <div class="field"><label>House motto or hobbies 🍳 <span style="font-weight:400;color:var(--light)">(optional — renters love this!)</span></label><input type="text" id="f-motto" placeholder="e.g. We love Sunday roasts, bad movies and a clean kitchen 🍳"></div>
+
+            <!-- Star signs - flatshare only -->
+            <div class="field" id="starsign-field">
+              <label>Star signs in the household ✨ <span style="font-weight:400;color:var(--light)">(optional — helps renters find their folk)</span></label>
+              <div class="star-select-wrap">
+                <button type="button" class="star-select-btn" onclick="toggleStarDropdown('landlord-stars')">
+                  <span id="landlord-stars-label">Select star signs…</span>
+                  <span>▾</span>
+                </button>
+                <div class="star-dropdown" id="landlord-stars">
+                  <div class="star-option"><input type="checkbox" value="aries" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♈</span> Aries</div>
+                  <div class="star-option"><input type="checkbox" value="taurus" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♉</span> Taurus</div>
+                  <div class="star-option"><input type="checkbox" value="gemini" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♊</span> Gemini</div>
+                  <div class="star-option"><input type="checkbox" value="cancer" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♋</span> Cancer</div>
+                  <div class="star-option"><input type="checkbox" value="leo" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♌</span> Leo</div>
+                  <div class="star-option"><input type="checkbox" value="virgo" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♍</span> Virgo</div>
+                  <div class="star-option"><input type="checkbox" value="libra" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♎</span> Libra</div>
+                  <div class="star-option"><input type="checkbox" value="scorpio" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♏</span> Scorpio</div>
+                  <div class="star-option"><input type="checkbox" value="sagittarius" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♐</span> Sagittarius</div>
+                  <div class="star-option"><input type="checkbox" value="capricorn" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♑</span> Capricorn</div>
+                  <div class="star-option"><input type="checkbox" value="aquarius" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♒</span> Aquarius</div>
+                  <div class="star-option"><input type="checkbox" value="pisces" onchange="updateStarLabel('landlord-stars')"><span class="sign-emoji">♓</span> Pisces</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social links for landlord -->
+            <div class="field">
+              <label>Your social links <span style="font-weight:400;color:var(--light)">(optional — helps renters know you're real)</span></label>
+              <div class="social-link-row">
+                <div class="social-icon" style="background:#E1306C;color:#fff">📸</div>
+                <input type="text" id="f-instagram" placeholder="Instagram profile URL">
+              </div>
+              <div class="social-link-row">
+                <div class="social-icon" style="background:#0077B5;color:#fff">💼</div>
+                <input type="text" id="f-linkedin" placeholder="LinkedIn profile URL">
+              </div>
+              <div class="social-link-row">
+                <div class="social-icon" style="background:#FF5A5F;color:#fff">🏡</div>
+                <input type="text" id="f-airbnb" placeholder="Airbnb profile or reviews URL">
+              </div>
+            </div>
+
+            <!-- Star signs - flatshare only -->
+            <div class="field" id="starsign-field" style="display:none">
+              <label>Star signs in the household ✨ <span style="font-weight:400;color:var(--light)">(optional — select all that apply)</span></label>
+              <div class="star-sign-wrap">
+                <button type="button" class="star-sign-trigger" onclick="toggleStarDrop('household-signs')">
+                  <span id="household-signs-label">Select star signs…</span>
+                  <span>▾</span>
+                </button>
+                <div class="star-sign-dropdown" id="household-signs-drop">
+                  <div class="star-sign-grid" id="household-signs-grid"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Star sign for new tenant seeking flatshare -->
+            <div class="field" id="seeker-starsign-field" style="display:none">
+              <label>Your star sign ✨ <span style="font-weight:400;color:var(--light)">(optional)</span></label>
+              <div class="star-sign-wrap">
+                <button type="button" class="star-sign-trigger" onclick="toggleStarDrop('seeker-sign')">
+                  <span id="seeker-sign-label">Select your star sign…</span>
+                  <span>▾</span>
+                </button>
+                <div class="star-sign-dropdown" id="seeker-sign-drop">
+                  <div class="star-sign-grid" id="seeker-sign-grid"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social links -->
+            <div class="field">
+              <label>Your social links <span style="font-weight:400;color:var(--light)">(optional — help renters know you're real)</span></label>
+              <div style="display:flex;flex-direction:column;gap:0.5rem">
+                <div style="display:flex;align-items:center;gap:0.7rem">
+                  <span style="font-size:1.1rem;width:24px">📸</span>
+                  <input type="text" id="f-instagram" placeholder="Instagram profile URL" style="flex:1">
+                </div>
+                <div style="display:flex;align-items:center;gap:0.7rem">
+                  <span style="font-size:1.1rem;width:24px">💼</span>
+                  <input type="text" id="f-linkedin" placeholder="LinkedIn profile URL" style="flex:1">
+                </div>
+                <div style="display:flex;align-items:center;gap:0.7rem">
+                  <span style="font-size:1.1rem;width:24px">🏡</span>
+                  <input type="text" id="f-airbnb" placeholder="Airbnb profile or reviews URL (optional)" style="flex:1">
+                </div>
+              </div>
+              <div style="font-size:0.75rem;color:var(--light);margin-top:0.5rem">💡 Tip: Copy your Airbnb profile URL from your Airbnb account → Profile → Share profile</div>
+            </div>
           </div>
           <div style="display:flex;gap:0.8rem">
             <button class="btn btn-ghost btn-auto" onclick="goStep('a')">← Back</button>
@@ -722,7 +928,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
             <div id="free-path" style="display:none">
               <div class="info-box green">
                 <span>✅</span>
-                <span id="free-path-msg">Your free sublet will go live this Thursday when the newsletter sends to 8,100+ subscribers.</span>
+                <span id="free-path-msg">Your free sublet will go live this Thursday when the newsletter sends to subscribers.</span>
               </div>
               <button class="btn btn-green" onclick="publishListing()">Confirm & schedule for Thursday →</button>
             </div>
@@ -731,7 +937,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
             <div id="paid-path">
               <div class="info-box">
                 <span>📰</span>
-                <span>Your listing will be <strong>featured at the top of search</strong> and in <strong>Thursday's newsletter</strong> to 8,100+ renters. It goes live Thursday when the newsletter sends.</span>
+                <span>Your listing will be <strong>featured at the top of search</strong> and in <strong>Thursday's newsletter</strong> to renters. It goes live Thursday when the newsletter sends.</span>
               </div>
               <div class="field"><label>Name on card</label><input type="text" placeholder="Alex Smith"></div>
               <div class="stripe-box"><div class="stripe-mock">💳 &nbsp; Card number &nbsp;·&nbsp; MM / YY &nbsp;·&nbsp; CVC</div></div>
@@ -751,7 +957,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
           <div class="success-card fade-in">
             <span class="s-icon" id="s-icon">🎉</span>
             <h2 id="s-title">Scheduled for Thursday!</h2>
-            <p id="s-msg">Your listing is confirmed and will go live this Thursday when the newsletter sends to 8,100+ subscribers.</p>
+            <p id="s-msg">Your listing is confirmed and will go live this Thursday when the newsletter sends to subscribers.</p>
             <div class="success-details" id="s-details"></div>
             <button class="btn btn-primary" style="margin-bottom:0.7rem" onclick="showPanel('mylistings')">View my listings →</button>
             <button class="btn btn-outline" onclick="resetPost()">Post another listing</button>
@@ -775,7 +981,10 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
                 <td><span class="badge badge-thursday">📰 Thu debut</span></td>
                 <td>💬 7</td>
                 <td style="font-size:0.82rem;color:var(--mid)">This Thursday</td>
-                <td><button class="btn btn-ghost btn-sm">Manage</button></td>
+                <td><div style="display:flex;gap:0.3rem">
+                  <button class="btn btn-ghost btn-sm" onclick="editListing(1)">Edit</button>
+                  <button class="btn btn-ghost btn-sm" onclick="markAsLet(1)" style="color:var(--green);border-color:rgba(46,125,82,0.3)">Mark as let</button>
+                </div></td>
               </tr>
               <tr>
                 <td style="padding-left:1.4rem"><div style="display:flex;align-items:center;gap:0.7rem"><span style="font-size:1.3rem">🏢</span><div><div style="font-weight:600;font-size:0.87rem">Modern 2-bed, Salford</div><div style="font-size:0.73rem;color:var(--light)">📍 Salford, M1</div></div></div></td>
@@ -783,7 +992,10 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
                 <td><span class="badge badge-live">● Live</span></td>
                 <td>💬 4</td>
                 <td style="font-size:0.82rem;color:var(--mid)">Expires Fri</td>
-                <td><button class="btn btn-ghost btn-sm">Manage</button></td>
+                <td><div style="display:flex;gap:0.3rem">
+                  <button class="btn btn-ghost btn-sm" onclick="editListing(2)">Edit</button>
+                  <button class="btn btn-ghost btn-sm" onclick="markAsLet(2)" style="color:var(--green);border-color:rgba(46,125,82,0.3)">Mark as let</button>
+                </div></td>
               </tr>
               <tr>
                 <td style="padding-left:1.4rem"><div style="display:flex;align-items:center;gap:0.7rem"><span style="font-size:1.3rem">🌿</span><div><div style="font-weight:600;font-size:0.87rem">Studio sublet, Bristol</div><div style="font-size:0.73rem;color:var(--light)">📍 Stokes Croft, BS1</div></div></div></td>
@@ -791,7 +1003,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
                 <td><span class="badge badge-expired">Expired</span></td>
                 <td>💬 3</td>
                 <td style="font-size:0.82rem;color:var(--light)">Ended</td>
-                <td><button class="btn btn-ghost btn-sm">Repost</button></td>
+                <td><div style="display:flex;gap:0.3rem"><button class="btn btn-ghost btn-sm" onclick="showPanel('post')">Repost</button><button class="btn btn-ghost btn-sm" style="color:#C0392B;border-color:#FADBD8" onclick="deleteListing(3)">Delete</button></div></td>
               </tr>
             </tbody>
           </table>
@@ -825,7 +1037,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
 
         <!-- COMPOSE TAB -->
         <div id="nl-tab-compose">
-          <div class="nl-schedule-chip">📅 Next send: this Thursday · 8:00 AM · <span id="nl-sub-count">8,100</span> subscribers</div>
+          <div class="nl-schedule-chip">📅 Next send: this Thursday · 8:00 AM · <span id="nl-sub-count">—</span> subscribers</div>
 
           <!-- Subject line -->
           <div class="fcard">
@@ -949,7 +1161,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
             <table class="data-table">
               <thead><tr><th style="padding-left:1.4rem">Date</th><th>Subject</th><th>Listings</th><th>Sent to</th><th>Open rate</th><th></th></tr></thead>
               <tbody>
-                <tr><td style="padding-left:1.4rem;font-size:0.82rem;color:var(--mid)">Thu 27 Feb</td><td style="font-size:0.86rem;font-weight:500">🏠 5 new homes this week — Hackney, Bristol & more</td><td>5 listings</td><td>8,100</td><td><span style="color:var(--green);font-weight:600">42%</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
+                <tr><td style="padding-left:1.4rem;font-size:0.82rem;color:var(--mid)">Thu 27 Feb</td><td style="font-size:0.86rem;font-weight:500">🏠 5 new homes this week — Hackney, Bristol & more</td><td>5 listings</td><td>—</td><td><span style="color:var(--green);font-weight:600">42%</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
                 <tr><td style="padding-left:1.4rem;font-size:0.82rem;color:var(--mid)">Thu 20 Feb</td><td style="font-size:0.86rem;font-weight:500">🏡 Valentine's week — find your perfect home</td><td>7 listings</td><td>8,050</td><td><span style="color:var(--green);font-weight:600">38%</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
                 <tr><td style="padding-left:1.4rem;font-size:0.82rem;color:var(--mid)">Thu 13 Feb</td><td style="font-size:0.86rem;font-weight:500">🌿 Free sublets + 4 new flatshares this week</td><td>6 listings</td><td>7,980</td><td><span style="color:var(--green);font-weight:600">45%</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
                 <tr><td style="padding-left:1.4rem;font-size:0.82rem;color:var(--mid)">Thu 6 Feb</td><td style="font-size:0.86rem;font-weight:500">🏢 Big week — 3 new rentals, 2 flatshares, 1 sublet</td><td>6 listings</td><td>7,910</td><td><span style="color:var(--mid);font-weight:600">31%</span></td><td><button class="btn btn-ghost btn-sm">View</button></td></tr>
@@ -972,6 +1184,48 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
           <div class="field"><label>Email address</label><input type="email" value="alex@example.com"></div>
           <div class="field"><label>Phone</label><input type="tel" placeholder="+44 7700 900000"></div>
           <div class="field"><label>About you</label><textarea placeholder="A short bio tenants will see when you reply to enquiries…"></textarea></div>
+
+          <!-- Star signs -->
+          <div class="field">
+            <label>Star signs in your household ✨ <span style="font-weight:400;color:var(--light)">(optional — help renters find their folk)</span></label>
+            <div class="star-select-wrap">
+              <button type="button" class="star-select-btn" onclick="toggleStarDropdown('profile-stars')">
+                <span id="profile-stars-label">Select star signs…</span>
+                <span>▾</span>
+              </button>
+              <div class="star-dropdown" id="profile-stars">
+                <div class="star-option"><input type="checkbox" value="aries" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♈</span> Aries</div>
+                <div class="star-option"><input type="checkbox" value="taurus" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♉</span> Taurus</div>
+                <div class="star-option"><input type="checkbox" value="gemini" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♊</span> Gemini</div>
+                <div class="star-option"><input type="checkbox" value="cancer" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♋</span> Cancer</div>
+                <div class="star-option"><input type="checkbox" value="leo" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♌</span> Leo</div>
+                <div class="star-option"><input type="checkbox" value="virgo" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♍</span> Virgo</div>
+                <div class="star-option"><input type="checkbox" value="libra" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♎</span> Libra</div>
+                <div class="star-option"><input type="checkbox" value="scorpio" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♏</span> Scorpio</div>
+                <div class="star-option"><input type="checkbox" value="sagittarius" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♐</span> Sagittarius</div>
+                <div class="star-option"><input type="checkbox" value="capricorn" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♑</span> Capricorn</div>
+                <div class="star-option"><input type="checkbox" value="aquarius" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♒</span> Aquarius</div>
+                <div class="star-option"><input type="checkbox" value="pisces" onchange="updateStarLabel('profile-stars')"><span class="sign-emoji">♓</span> Pisces</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div class="field">
+            <label>Your social links <span style="font-weight:400;color:var(--light)">(optional — help renters know you're real)</span></label>
+            <div class="social-link-row">
+              <div class="social-icon" style="background:#E1306C;color:#fff">📸</div>
+              <input type="text" id="p-instagram" placeholder="Instagram profile URL">
+            </div>
+            <div class="social-link-row">
+              <div class="social-icon" style="background:#0077B5;color:#fff">💼</div>
+              <input type="text" id="p-linkedin" placeholder="LinkedIn profile URL">
+            </div>
+            <div class="social-link-row">
+              <div class="social-icon" style="background:#FF5A5F;color:#fff">🏡</div>
+              <input type="text" id="p-airbnb" placeholder="Airbnb profile URL (from your Airbnb account → Profile)">
+            </div>
+          </div>
           <button class="btn btn-primary btn-auto" style="padding:0.65rem 1.5rem">Save changes</button>
         </div>
         <div class="fcard">
@@ -980,6 +1234,71 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
             <label style="display:flex;align-items:center;gap:0.7rem;cursor:pointer"><input type="checkbox" checked style="accent-color:var(--accent)"> Thursday newsletter — new listings every week</label>
             <label style="display:flex;align-items:center;gap:0.7rem;cursor:pointer"><input type="checkbox" checked style="accent-color:var(--accent)"> Enquiry notifications by email</label>
             <label style="display:flex;align-items:center;gap:0.7rem;cursor:pointer"><input type="checkbox" style="accent-color:var(--accent)"> Marketing updates & tips</label>
+          </div>
+        </div>
+
+        <!-- Social links & star sign -->
+        <div class="fcard">
+          <div class="fcard-title" style="margin-bottom:0.8rem">Your social links <span style="font-weight:400;color:var(--light);font-size:0.8rem">— help landlords & housemates see you're real</span></div>
+          <div style="display:flex;flex-direction:column;gap:0.55rem;margin-bottom:1rem">
+            <div style="display:flex;align-items:center;gap:0.7rem"><span style="font-size:1.1rem;width:24px">📸</span><input type="text" id="p-instagram" placeholder="Instagram profile URL" style="flex:1;background:var(--warm-white);border:1.5px solid var(--border);border-radius:10px;padding:0.6rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;outline:none"></div>
+            <div style="display:flex;align-items:center;gap:0.7rem"><span style="font-size:1.1rem;width:24px">💼</span><input type="text" id="p-linkedin" placeholder="LinkedIn profile URL" style="flex:1;background:var(--warm-white);border:1.5px solid var(--border);border-radius:10px;padding:0.6rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;outline:none"></div>
+            <div style="display:flex;align-items:center;gap:0.7rem"><span style="font-size:1.1rem;width:24px">🏡</span><input type="text" id="p-airbnb" placeholder="Airbnb profile URL (shows your reviews)" style="flex:1;background:var(--warm-white);border:1.5px solid var(--border);border-radius:10px;padding:0.6rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;outline:none"></div>
+          </div>
+          <div style="font-size:0.75rem;color:var(--light);margin-bottom:1.2rem">💡 Airbnb URL: log in → Profile → Share → copy the link</div>
+          <div class="fcard-title" style="margin-bottom:0.7rem">Your star sign ✨ <span style="font-weight:400;color:var(--light);font-size:0.8rem">— shown on your enquiries to landlords</span></div>
+          <div class="star-sign-wrap" style="max-width:300px">
+            <button type="button" class="star-sign-trigger" onclick="toggleStarDrop('seeker-sign')"><span id="seeker-sign-label">Select your star sign…</span><span>▾</span></button>
+            <div class="star-sign-dropdown" id="seeker-sign-drop"><div class="star-sign-grid" id="seeker-sign-grid"></div></div>
+          </div>
+          <button class="btn btn-primary btn-auto" style="margin-top:1.2rem" onclick="toast('Profile saved ✅','green')">Save profile</button>
+        </div>
+      </div>
+
+      <!-- ── TENANT DASHBOARD ── -->
+      <div class="dash-panel" id="panel-tenant">
+        <div class="panel-header">
+          <h1>My renter account</h1>
+          <p>Your saved listings, subscription and message history.</p>
+        </div>
+
+        <!-- Subscription status -->
+        <div id="tenant-sub-active" style="display:none" class="fcard" style="background:var(--green-light);border-color:rgba(46,125,82,0.2)">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+            <div>
+              <div style="font-weight:700;color:var(--green);font-size:1rem">✅ Active subscription</div>
+              <div style="font-size:0.83rem;color:var(--mid);margin-top:0.2rem">£15/month · Renews 4 Apr 2026 · Contact any landlord</div>
+            </div>
+            <button class="btn btn-ghost btn-auto btn-sm" style="color:#C0392B;border-color:#FADBD8">Cancel subscription</button>
+          </div>
+        </div>
+
+        <div id="tenant-sub-inactive" class="fcard">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+            <div>
+              <div style="font-weight:700;color:var(--dark);font-size:1rem">🔒 No active subscription</div>
+              <div style="font-size:0.83rem;color:var(--mid);margin-top:0.2rem">Subscribe for £15/month to contact any landlord directly</div>
+            </div>
+            <button class="btn btn-primary btn-auto" style="padding:0.6rem 1.3rem" onclick="showPanel('browse');showUnlockModal()">Subscribe — £15/mo →</button>
+          </div>
+        </div>
+
+        <!-- Saved listings -->
+        <div class="fcard">
+          <div class="fcard-title">🤍 Saved listings</div>
+          <div class="fcard-sub">Listings you have saved to revisit.</div>
+          <div id="saved-listings-wrap">
+            <div style="text-align:center;padding:2rem;color:var(--light);font-size:0.86rem">No saved listings yet — browse listings and tap 🤍 to save them here.</div>
+          </div>
+        </div>
+
+        <!-- Message history -->
+        <div class="fcard" style="padding:0;overflow:hidden">
+          <div style="padding:1.2rem 1.6rem;border-bottom:1px solid var(--border)">
+            <div class="fcard-title" style="margin:0">💬 My enquiries sent</div>
+          </div>
+          <div id="tenant-messages">
+            <div style="padding:2rem;text-align:center;color:var(--light);font-size:0.86rem">No enquiries sent yet.</div>
           </div>
         </div>
       </div>
@@ -1166,7 +1485,12 @@ function launchDash(first, last, role) {
   if (badge) badge.style.display = role === 'admin' ? 'inline-flex' : 'none';
 
   calcThursday(); renderPromoTable(); renderSubTable();
-  showPanel('overview');
+  if (role === 'user') {
+    switchMainTab('browse');
+  } else {
+    switchMainTab('manage');
+    showPanel('overview');
+  }
 }
 function signOut() {
   document.getElementById('dash-screen').classList.remove('active');
@@ -1177,7 +1501,7 @@ function signOut() {
 const PANEL_MAP = {
   overview:'si-overview', post:'si-post', mylistings:'si-listings',
   inbox:'si-inbox', newsletter:'si-nl', promos:'si-promos',
-  profile:'si-profile', billing:'si-billing'
+  tenant:'si-tenant', profile:'si-profile', billing:'si-billing'
 };
 function showPanel(name) {
   document.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('active'));
@@ -1283,7 +1607,7 @@ function publishListing() {
   const thuStr=thu.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
   document.getElementById('s-icon').textContent='📅';
   document.getElementById('s-title').textContent='Scheduled for Thursday!';
-  document.getElementById('s-msg').textContent=`Your listing is confirmed and will go live on ${thuStr} when the newsletter sends to 8,100+ subscribers.`;
+  document.getElementById('s-msg').textContent=`Your listing is confirmed and will go live on ${thuStr} when the newsletter sends to subscribers.`;
   document.getElementById('s-details').innerHTML=`
     <div class="sd-row"><span>Listing</span><strong>${title}</strong></div>
     <div class="sd-row"><span>Type</span><strong>${P.icon} ${P.name}</strong></div>
@@ -1498,15 +1822,210 @@ function generateCode() {
   document.getElementById('new-promo-code').value=code;
 }
 
+// ══ NAVIGATION ══
+function goToLanding() {
+  ['landing-screen','auth-screen','public-browse-screen'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.style.display = 'none'; el.classList.remove('active'); }
+  });
+  const dash = document.getElementById('dash-screen');
+  if (dash) dash.classList.remove('active');
+  const landing = document.getElementById('landing-screen');
+  landing.style.display = 'flex';
+  landing.classList.add('active');
+}
+
+function goToBrowse() {
+  ['landing-screen','auth-screen'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.style.display = 'none'; el.classList.remove('active'); }
+  });
+  const dash = document.getElementById('dash-screen');
+  if (dash) dash.classList.remove('active');
+  const pub = document.getElementById('public-browse-screen');
+  pub.style.display = 'flex';
+  pub.classList.add('active');
+  pubRenderListings();
+}
+
+function goToPost() {
+  ['landing-screen','public-browse-screen'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.style.display = 'none'; el.classList.remove('active'); }
+  });
+  const auth = document.getElementById('auth-screen');
+  auth.style.display = 'flex';
+  auth.classList.add('active');
+  switchTab('in');
+}
+
+// ══ PUBLIC BROWSE FUNCTIONS ══
+let pubContactsUnlocked = false;
+let pubCurrentType = 'all';
+let pubCurrentRegion = 'all';
+
+function pubFilterType(type) {
+  pubCurrentType = type;
+  ['all','flatshare','sublet','rental'].forEach(t => {
+    const el = document.getElementById('pub-lt-'+t);
+    if (el) el.classList.toggle('active', t===type);
+  });
+  const heading = document.getElementById('browse-section-heading');
+  if (heading) heading.style.display = type === 'flatshare' ? 'block' : 'none';
+  pubRenderListings();
+}
+
+function pubFilterRegion(region) {
+  pubCurrentRegion = region;
+  ['all','london','manchester','bristol','leeds','birmingham','edinburgh','other'].forEach(r => {
+    const el = document.getElementById('pub-rg-'+r);
+    if (el) el.classList.toggle('active', r===region);
+  });
+  pubRenderListings();
+}
+
+function pubFilterListings() { pubRenderListings(); }
+
+function pubRenderListings() {
+  const grid = document.getElementById('pub-listing-grid');
+  if (!grid) return;
+  const loc  = (document.getElementById('pub-search-location') ? document.getElementById('pub-search-location').value : '').toLowerCase();
+  const maxP = parseInt(document.getElementById('pub-filter-price') ? document.getElementById('pub-filter-price').value : '') || 0;
+  const beds = document.getElementById('pub-filter-beds') ? document.getElementById('pub-filter-beds').value : '';
+
+  let filtered = LISTINGS.filter(l => {
+    if (pubCurrentType !== 'all' && l.type !== pubCurrentType) return false;
+    if (loc && !l.location.toLowerCase().includes(loc) && !l.title.toLowerCase().includes(loc)) return false;
+    if (maxP && l.price > maxP) return false;
+    if (beds && l.type !== 'flatshare' && l.beds !== beds) return false;
+    if (pubCurrentRegion !== 'all' && getRegion(l.location) !== pubCurrentRegion) return false;
+    return true;
+  });
+
+  const countEl = document.getElementById('pub-results-count');
+  if (countEl) countEl.textContent = filtered.length + ' listing' + (filtered.length !== 1 ? 's' : '') + ' found';
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--light)">No listings found — try adjusting your filters.</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map(l => {
+    const typeLabel = l.type === 'flatshare' ? '🏠 Flatshare' : l.type === 'sublet' ? '🌿 Sublet' : '🏢 Rental';
+    const priceColour = l.type === 'sublet' ? '#2E7D52' : 'var(--dark)';
+    const contactBtn = pubContactsUnlocked
+      ? `<button style="width:100%;background:#1A1510;color:#fff;border:none;border-radius:8px;padding:0.45rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;cursor:pointer" onclick="pubShowContact(${l.id})">Contact landlord →</button>`
+      : `<button style="width:100%;background:var(--cream);color:var(--mid);border:1px solid var(--border);border-radius:8px;padding:0.45rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;cursor:pointer" onclick="showPubUnlockModal()">🔒 Subscribe to contact — £15/mo</button>`;
+    return `<div style="background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;cursor:pointer" onclick="openListing(${l.id})" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 30px rgba(26,21,16,0.12)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
+      <div style="height:180px;background:linear-gradient(135deg,#F0EFED,#E8E4DF);display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative">
+        ${l.photo}
+        <div style="position:absolute;top:0.7rem;left:0.7rem;background:rgba(26,21,16,0.75);color:#fff;font-size:0.65rem;font-weight:700;padding:0.22rem 0.6rem;border-radius:5px">${typeLabel}</div>
+        <div style="position:absolute;top:0.7rem;right:0.7rem;background:#C8622A;color:#fff;font-size:0.62rem;font-weight:700;padding:0.22rem 0.6rem;border-radius:5px">📰 Thu</div>
+      </div>
+      <div style="padding:1rem 1.1rem">
+        <div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:${priceColour}">£${l.price.toLocaleString()}<span style="font-size:0.72rem;font-weight:400;color:var(--light);font-family:'DM Sans',sans-serif">/mo</span></div>
+        <div style="font-weight:600;font-size:0.9rem;margin:0.25rem 0 0.15rem;color:var(--dark)">${l.title}</div>
+        <div style="font-size:0.77rem;color:var(--mid);margin-bottom:0.45rem">📍 ${l.location}</div>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.5rem">
+          <span style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:0.18rem 0.5rem;font-size:0.7rem;color:var(--mid)">🛏 ${l.beds}</span>
+          <span style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:0.18rem 0.5rem;font-size:0.7rem;color:var(--mid)">Bills ${l.bills}</span>
+          <span style="background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:0.18rem 0.5rem;font-size:0.7rem;color:var(--mid)">📅 ${l.avail}</span>
+          ${l.stars && l.stars.length ? l.stars.map(s => `<span style="background:#FEF0E8;border:1px solid #F5D5C0;border-radius:6px;padding:0.18rem 0.5rem;font-size:0.7rem;color:#C8622A">${STAR_EMOJIS[s]||''} ${s.charAt(0).toUpperCase()+s.slice(1)}</span>`).join('') : ''}
+        </div>
+        ${l.instagram || l.linkedin ? `<div style="display:flex;gap:0.5rem;margin-bottom:0.5rem">
+          ${l.instagram ? '<a href="'+l.instagram+'" target="_blank" style="background:#E1306C;color:#fff;border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:0.75rem;text-decoration:none">📸</a>' : ''}
+          ${l.linkedin ? '<a href="'+l.linkedin+'" target="_blank" style="background:#0077B5;color:#fff;border-radius:50%;width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-size:0.75rem;text-decoration:none">💼</a>' : ''}
+        </div>` : ''}
+        <div style="font-size:0.77rem;color:var(--mid);line-height:1.5;margin-bottom:0.5rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${l.desc}</div>
+        <div style="font-size:0.74rem;color:#C8622A;font-style:italic;border-left:2px solid #C8622A;padding-left:0.55rem;margin-bottom:0.6rem">"${l.motto}"</div>
+        ${l.signs && l.signs.length ? `<div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.6rem">${l.signs.map(s=>`<span style="background:#FEF0E8;border:1px solid #F5D5C0;border-radius:20px;padding:0.15rem 0.55rem;font-size:0.7rem;color:#C8622A">${s}</span>`).join('')}</div>` : ''}
+        ${(l.instagram || l.linkedin || l.airbnb) ? `<div style="display:flex;gap:0.6rem;margin-bottom:0.7rem;align-items:center">
+          ${l.instagram ? `<a href="${l.instagram}" target="_blank" style="font-size:0.75rem;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.2rem;padding:0.2rem 0.5rem;background:var(--cream);border-radius:6px;border:1px solid var(--border)">📸 Instagram</a>` : ''}
+          ${l.linkedin ? `<a href="${l.linkedin}" target="_blank" style="font-size:0.75rem;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.2rem;padding:0.2rem 0.5rem;background:var(--cream);border-radius:6px;border:1px solid var(--border)">💼 LinkedIn</a>` : ''}
+          ${l.airbnb ? `<a href="${l.airbnb}" target="_blank" style="font-size:0.75rem;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.2rem;padding:0.2rem 0.5rem;background:var(--cream);border-radius:6px;border:1px solid var(--border)">🏡 Reviews</a>` : ''}
+        </div>` : ''}
+        ${contactBtn}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function showPubUnlockModal() {
+  document.getElementById('pub-unlock-modal').style.display = 'flex';
+}
+
+function pubUnlockContacts() {
+  pubContactsUnlocked = true;
+  document.getElementById('pub-unlock-modal').style.display = 'none';
+  document.getElementById('pub-unlocked-banner') && (document.getElementById('pub-unlocked-banner').style.display = 'block');
+  const banner = document.querySelector('#public-browse-screen [style*="linear-gradient(135deg,#C8622A"]');
+  if (banner) banner.style.display = 'none';
+  pubRenderListings();
+  toast('✅ Subscribed! You can now contact any landlord.', 'green');
+}
+
+function pubShowContact(id) {
+  const l = LISTINGS.find(x => x.id === id);
+  if (!l) return;
+  document.getElementById('contact-listing-title').textContent = l.title;
+  document.getElementById('contact-details').innerHTML =
+    '<div>📧 <strong>landlord@example.com</strong></div>' +
+    '<div>📱 <strong>+44 7700 900 123</strong></div>' +
+    '<div style="font-size:0.75rem;color:var(--light);margin-top:0.4rem">Replies usually within 24 hours</div>';
+  document.getElementById('contact-modal').style.display = 'flex';
+}
+
 // ══ SAMPLE LISTINGS DATA ══
 const LISTINGS = [
-  { id:1, type:'flatshare', title:'Sunny double room in Hackney flat', location:'Hackney, E8', price:850, bills:'Included', beds:'1', baths:'1', avail:'1 Mar 2026', desc:'Bright, airy double room in a friendly 3-person flat. Great transport links, 5 mins from Hackney Central. Perfect for young professionals.', motto:'We love Sunday roasts, bad movies and keeping the kitchen clean 🍳', photo:'🏠', active:true },
+  { id:1, type:'flatshare', title:'Sunny double room in Hackney flat', location:'Hackney, E8', price:850, bills:'Included', beds:'1', baths:'1', avail:'1 Mar 2026', desc:'Bright, airy double room in a friendly 3-person flat. Great transport links, 5 mins from Hackney Central. Perfect for young professionals.', motto:'We love Sunday roasts, bad movies and keeping the kitchen clean 🍳', photo:'🏠', signs:['♊ Gemini','♌ Leo','♎ Libra'], instagram:'https://instagram.com', linkedin:'', airbnb:'', active:true },
   { id:2, type:'rental', title:'Modern 2-bed apartment, city views', location:'Salford, Manchester', price:1100, bills:'Not included', beds:'2', baths:'1', avail:'15 Mar 2026', desc:'Stunning modern apartment with floor-to-ceiling windows and city views. Gym and concierge included. Available mid-March.', motto:'New build, quiet building, parking space included 🚗', photo:'🏢', active:true },
   { id:3, type:'sublet', title:'Cosy studio sublet — 6 weeks', location:'City Centre, Leeds', price:650, bills:'Included', beds:'Studio', baths:'1', avail:'10 Mar 2026', desc:'Lovely studio sublet for 6 weeks while I travel. Everything included — Netflix, bills, WiFi. Just bring your suitcase!', motto:'Plant lover seeking plant sitter 🌿 All bills included', photo:'🌿', active:true },
-  { id:4, type:'flatshare', title:'Large room in Victorian terrace', location:'Brixton, SW9', price:920, bills:'Not included', beds:'1', baths:'2', avail:'1 Apr 2026', desc:'Gorgeous room in a beautifully renovated Victorian terrace. Two bathrooms, large garden, off-street parking.', motto:'Creative household — musicians, designers and one very friendly dog 🎸', photo:'🏠', active:true },
+  { id:4, type:'flatshare', title:'Large room in Victorian terrace', location:'Brixton, SW9', price:920, bills:'Not included', beds:'1', baths:'2', avail:'1 Apr 2026', desc:'Gorgeous room in a beautifully renovated Victorian terrace. Two bathrooms, large garden, off-street parking.', motto:'Creative household — musicians, designers and one very friendly dog 🎸', photo:'🏠', signs:['♏ Scorpio','♓ Pisces'], instagram:'https://instagram.com', linkedin:'https://linkedin.com', airbnb:'', active:true },
   { id:5, type:'rental', title:'Charming 1-bed cottage', location:'Clifton, Bristol', price:1350, bills:'Not included', beds:'1', baths:'1', avail:'1 Mar 2026', desc:'Beautiful period cottage in sought-after Clifton Village. Private garden, original features throughout.', motto:'Freshly renovated with original Victorian tiles and a wood burner 🔥', photo:'🏢', active:true },
   { id:6, type:'sublet', title:'Stylish flat sublet — 3 months', location:'Shoreditch, E1', price:1800, bills:'Included', beds:'2', baths:'1', avail:'20 Mar 2026', desc:'Incredible Shoreditch flat while owner works abroad. Rooftop terrace, fully furnished, everything included. Short let 3 months.', motto:'Rooftop access, espresso machine, vinyl collection — help yourself 🎵', photo:'🌿', active:true },
 ];
+
+// ══ LANDING PAGE ══
+function goToBrowse() {
+  document.getElementById('landing-screen').classList.remove('active');
+  document.getElementById('browse-screen').style.display = 'flex';
+  renderListings();
+  renderLandingPreview();
+}
+
+function goToPost() {
+  document.getElementById('landing-screen').classList.remove('active');
+  document.getElementById('auth-screen').classList.add('active');
+}
+
+function renderLandingPreview() {
+  const grid = document.getElementById('landing-preview-grid');
+  if (!grid) return;
+  const preview = LISTINGS.slice(0, 3);
+  grid.innerHTML = preview.map(l => {
+    const typeLabel = l.type === 'flatshare' ? '🏠 Flatshare' : l.type === 'sublet' ? '🌿 Sublet' : '🏢 Rental';
+    return `<div class="listing-card preview-blur">
+      <div class="lc-photo"><div class="lc-photo-placeholder">${l.photo}</div>
+        <div class="lc-type-badge">${typeLabel}</div>
+        <div class="lc-thu-badge">📰 Thu</div>
+      </div>
+      <div class="lc-body">
+        <div class="lc-price">£${l.price.toLocaleString()}<span>/mo</span></div>
+        <div class="lc-title">${l.title}</div>
+        <div class="lc-location">📍 ${l.location}</div>
+        <div class="lc-meta"><span class="lc-tag">🛏 ${l.beds}</span><span class="lc-tag">Bills ${l.bills}</span></div>
+        <div class="lc-motto">"${l.motto}"</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// Render preview on load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderLandingPreview);
+} else {
+  setTimeout(renderLandingPreview, 100);
+}
 
 let contactsUnlocked = false;
 let currentListingType = 'all';
@@ -1529,15 +2048,50 @@ function switchMainTab(tab) {
 }
 
 // ══ RENDER LISTINGS ══
+// Region mapping
+const REGION_MAP = {
+  london: ['hackney','brixton','shoreditch','camden','islington','peckham','e1','e2','e8','sw','se','n1','n4','nw','w1','wc'],
+  manchester: ['manchester','salford','didsbury','chorlton','ancoats'],
+  bristol: ['bristol','clifton','stokes croft','redland','bs'],
+  leeds: ['leeds','headingley','chapeltown','ls'],
+  birmingham: ['birmingham','edgbaston','moseley','b1','b15'],
+  edinburgh: ['edinburgh','leith','newington','eh'],
+};
+
+function getRegion(location) {
+  const loc = location.toLowerCase();
+  for (const [region, keywords] of Object.entries(REGION_MAP)) {
+    if (keywords.some(k => loc.includes(k))) return region;
+  }
+  return 'other';
+}
+
 function renderListings() {
   const grid = document.getElementById('listing-grid');
   if (!grid) return;
-  const loc = (document.getElementById('search-location').value || '').toLowerCase();
+  const loc   = (document.getElementById('search-location') ? document.getElementById('search-location').value : '').toLowerCase();
+  const maxP  = parseInt(document.getElementById('filter-price') ? document.getElementById('filter-price').value : '') || 0;
+  const beds  = document.getElementById('filter-beds') ? document.getElementById('filter-beds').value : '';
+  const regSel = document.getElementById('filter-region') ? document.getElementById('filter-region').value : '';
+  const activeRegion = regSel || (currentRegion !== 'all' ? currentRegion : '');
+
   let filtered = LISTINGS.filter(l => {
     if (currentListingType !== 'all' && l.type !== currentListingType) return false;
     if (loc && !l.location.toLowerCase().includes(loc) && !l.title.toLowerCase().includes(loc)) return false;
+    if (maxP && l.price > maxP) return false;
+    if (beds && l.type !== 'flatshare') {
+      if (beds === '3' && !['3','4','4+'].includes(l.beds)) {
+        if (!l.beds.includes('3') && !l.beds.includes('4')) return false;
+      } else if (beds !== '3' && l.beds !== beds && l.beds !== beds+' bed') return false;
+    }
+    if (activeRegion && activeRegion !== 'all') {
+      if (getRegion(l.location) !== activeRegion) return false;
+    }
     return true;
   });
+
+  const countEl = document.getElementById('results-count');
+  if (countEl) countEl.textContent = filtered.length + ' listing' + (filtered.length !== 1 ? 's' : '') + ' found';
   if (filtered.length === 0) {
     grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:var(--light)">No listings found. Try a different search.</div>';
     return;
@@ -1574,6 +2128,291 @@ function renderListings() {
   }).join('');
 }
 
+// ══ SAVED LISTINGS ══
+let savedListings = [];
+
+function toggleSaveListing() {
+  const btn = document.getElementById('save-btn');
+  const id = parseInt(btn.dataset.id || 0);
+  const idx = savedListings.indexOf(id);
+  if (idx > -1) {
+    savedListings.splice(idx, 1);
+    btn.textContent = '🤍';
+    toast('Removed from saved');
+  } else {
+    savedListings.push(id);
+    btn.textContent = '❤️';
+    toast('Saved! Find it in Renter account', 'green');
+  }
+  renderSavedListings();
+}
+
+function renderSavedListings() {
+  const wrap = document.getElementById('saved-listings-wrap');
+  if (!wrap) return;
+  const saved = LISTINGS.filter(l => savedListings.includes(l.id));
+  if (saved.length === 0) {
+    wrap.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--light);font-size:0.86rem">No saved listings yet — browse listings and tap 🤍 to save them here.</div>';
+    return;
+  }
+  wrap.innerHTML = saved.map(l => `
+    <div style="display:flex;align-items:center;gap:1rem;padding:0.85rem 0;border-bottom:1px solid var(--border)">
+      <span style="font-size:1.5rem">${l.photo}</span>
+      <div style="flex:1">
+        <div style="font-weight:600;font-size:0.87rem">${l.title}</div>
+        <div style="font-size:0.76rem;color:var(--mid)">📍 ${l.location} · £${l.price}/mo</div>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="openListing(${l.id})">View</button>
+      <button class="btn btn-ghost btn-sm" onclick="savedListings.splice(savedListings.indexOf(${l.id}),1);renderSavedListings()" style="color:#C0392B">Remove</button>
+    </div>`).join('');
+}
+
+// ══ LISTING DETAIL ══
+function openListing(id) {
+  const l = LISTINGS.find(x => x.id === id);
+  if (!l) return;
+  const modal = document.getElementById('listing-detail-modal');
+  const typeLabel = l.type === 'flatshare' ? '🏠 Flatshare' : l.type === 'sublet' ? '🌿 Sublet' : '🏢 Rental';
+  const priceColour = l.type === 'sublet' ? '#2E7D52' : 'var(--dark)';
+  document.getElementById('detail-photo').querySelector('div:first-child') && (document.getElementById('detail-photo').innerHTML = 
+    `<span style="font-size:6rem">${l.photo}</span>
+     <div style="position:absolute;top:1rem;right:1rem;display:flex;gap:0.5rem">
+       <button onclick="toggleSaveListing()" id="save-btn" data-id="${l.id}" style="background:rgba(255,255,255,0.9);border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.15)">${savedListings.includes(l.id) ? '❤️' : '🤍'}</button>
+       <button onclick="closeListing()" style="background:rgba(255,255,255,0.9);border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.15)">✕</button>
+     </div>
+     <div style="position:absolute;top:1rem;left:1rem;background:rgba(26,21,16,0.75);color:#fff;font-size:0.72rem;font-weight:700;padding:0.3rem 0.7rem;border-radius:6px">${typeLabel}</div>`
+  );
+  document.getElementById('detail-price').innerHTML = `<span style="color:${priceColour}">£${l.price.toLocaleString()}</span><span style="font-size:0.8rem;font-weight:400;color:var(--light);font-family:'DM Sans',sans-serif">/mo</span>`;
+  document.getElementById('detail-title').textContent = l.title;
+  document.getElementById('detail-location').textContent = '📍 ' + l.location;
+  document.getElementById('detail-meta').innerHTML = 
+    `<span style="background:var(--cream);border:1px solid var(--border);border-radius:7px;padding:0.3rem 0.7rem;font-size:0.78rem;color:var(--mid)">🛏 ${l.beds}</span>
+     <span style="background:var(--cream);border:1px solid var(--border);border-radius:7px;padding:0.3rem 0.7rem;font-size:0.78rem;color:var(--mid)">🚿 ${l.baths} bath</span>
+     <span style="background:var(--cream);border:1px solid var(--border);border-radius:7px;padding:0.3rem 0.7rem;font-size:0.78rem;color:var(--mid)">Bills ${l.bills}</span>
+     <span style="background:var(--cream);border:1px solid var(--border);border-radius:7px;padding:0.3rem 0.7rem;font-size:0.78rem;color:var(--mid)">📅 From ${l.avail}</span>`;
+  document.getElementById('detail-motto').textContent = '"' + l.motto + '"';
+  document.getElementById('detail-desc').textContent = l.desc;
+  document.getElementById('detail-grid').innerHTML = 
+    `<div style="font-size:0.8rem"><span style="color:var(--light)">Type</span><br><strong>${typeLabel}</strong></div>
+     <div style="font-size:0.8rem"><span style="color:var(--light)">Available</span><br><strong>${l.avail}</strong></div>
+     <div style="font-size:0.8rem"><span style="color:var(--light)">Duration</span><br><strong>7 days featured</strong></div>
+     <div style="font-size:0.8rem"><span style="color:var(--light)">Newsletter</span><br><strong>📰 Thursday debut</strong></div>`;
+  const isUnlocked = (typeof pubContactsUnlocked !== 'undefined' && pubContactsUnlocked) || (typeof contactsUnlocked !== 'undefined' && contactsUnlocked);
+  document.getElementById('detail-contact-wrap').innerHTML = isUnlocked
+    ? `<button class="btn btn-primary" onclick="closeListing();pubShowContact(${l.id})">Contact landlord →</button>`
+    : `<button class="btn btn-primary" onclick="closeListing();showPubUnlockModal()">🔒 Subscribe to contact — £15/mo →</button>
+       <div style="font-size:0.75rem;color:var(--light);text-align:center;margin-top:0.5rem">£15/month · Cancel anytime · Secured by Stripe</div>`;
+  modal.style.display = 'flex';
+}
+
+function closeListing() {
+  document.getElementById('listing-detail-modal').style.display = 'none';
+}
+
+// ══ EDIT / DELETE / MARK AS LET ══
+function editListing(id) {
+  showPanel('post');
+  toast('Load your listing details to edit — feature coming soon', '');
+}
+function markAsLet(id) {
+  if (confirm('Mark this listing as let? It will be removed from search results.')) {
+    toast('✅ Listing marked as let — removed from search', 'green');
+  }
+}
+function deleteListing(id) {
+  if (confirm('Permanently delete this listing? This cannot be undone.')) {
+    toast('Listing deleted', '');
+  }
+}
+
+// ══ COOKIE CONSENT ══
+function initCookies() {
+  if (!localStorage.getItem('hf-cookies')) {
+    setTimeout(() => {
+      const b = document.getElementById('cookie-banner');
+      if (b) b.style.display = 'flex';
+    }, 1500);
+  }
+}
+function acceptCookies() {
+  try { localStorage.setItem('hf-cookies', 'accepted'); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+  toast('Cookies accepted', 'green');
+}
+function declineCookies() {
+  try { localStorage.setItem('hf-cookies', 'declined'); } catch(e) {}
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+function showTerms() {
+  document.getElementById('terms-title').textContent = 'Terms & Privacy Policy';
+  document.getElementById('terms-modal').style.display = 'flex';
+}
+
+// ══ INPUT SANITISATION ══
+function sanitise(str) {
+  if (!str) return '';
+  return String(str).replace(/[<>'"&]/g, c => ({'<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;','&':'&amp;'}[c]));
+}
+
+// ══ EMAIL VALIDATION ══
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+// Update doSignUp to validate email
+const _origSignUp = doSignUp;
+
+// ══ STAR SIGNS ══
+const STAR_SIGNS = [
+  { sign: 'Aries',       emoji: '♈' },
+  { sign: 'Taurus',      emoji: '♉' },
+  { sign: 'Gemini',      emoji: '♊' },
+  { sign: 'Cancer',      emoji: '♋' },
+  { sign: 'Leo',         emoji: '♌' },
+  { sign: 'Virgo',       emoji: '♍' },
+  { sign: 'Libra',       emoji: '♎' },
+  { sign: 'Scorpio',     emoji: '♏' },
+  { sign: 'Sagittarius', emoji: '♐' },
+  { sign: 'Capricorn',   emoji: '♑' },
+  { sign: 'Aquarius',    emoji: '♒' },
+  { sign: 'Pisces',      emoji: '♓' },
+];
+
+const selectedSigns = { 'household-signs': [], 'seeker-sign': [] };
+
+function initStarSigns() {
+  ['household-signs', 'seeker-sign'].forEach(id => {
+    const grid = document.getElementById(id + '-grid');
+    if (!grid) return;
+    const isSingle = id === 'seeker-sign';
+    grid.innerHTML = STAR_SIGNS.map(s => `
+      <label class="sign-option" id="${id}-${s.sign}">
+        <input type="${isSingle ? 'radio' : 'checkbox'}" name="${id}" value="${s.sign}" onchange="updateSignSelection('${id}')">
+        <span>${s.emoji} ${s.sign}</span>
+      </label>`).join('');
+  });
+}
+
+function toggleStarDrop(id) {
+  const drop = document.getElementById(id + '-drop');
+  if (drop) drop.classList.toggle('open');
+  document.addEventListener('click', function closeSign(e) {
+    const wrap = drop && drop.closest('.star-sign-wrap');
+    if (wrap && !wrap.contains(e.target)) {
+      drop.classList.remove('open');
+      document.removeEventListener('click', closeSign);
+    }
+  });
+}
+
+function updateSignSelection(id) {
+  const inputs = document.querySelectorAll(`input[name="${id}"]`);
+  const selected = Array.from(inputs).filter(i => i.checked).map(i => i.value);
+  selectedSigns[id] = selected;
+  const label = document.getElementById(id + '-label');
+  if (label) {
+    if (selected.length === 0) {
+      label.textContent = 'Select star signs…';
+    } else {
+      label.textContent = selected.map(s => {
+        const found = STAR_SIGNS.find(x => x.sign === s);
+        return found ? found.emoji + ' ' + s : s;
+      }).join(', ');
+    }
+  }
+  // Update option styles
+  STAR_SIGNS.forEach(s => {
+    const opt = document.getElementById(id + '-' + s.sign);
+    if (opt) opt.classList.toggle('selected', selected.includes(s.sign));
+  });
+}
+
+// Show/hide star sign + social fields based on listing type
+function updateFormFields() {
+  const type = document.getElementById('f-type') ? document.getElementById('f-type').value : '';
+  const starField = document.getElementById('starsign-field');
+  const seekerField = document.getElementById('seeker-starsign-field');
+  if (starField) starField.style.display = type === 'flatshare' ? '' : 'none';
+  if (seekerField) seekerField.style.display = 'none'; // shown in tenant profile
+}
+
+// ══ STAR SIGN DROPDOWN ══
+const STAR_EMOJIS = {
+  aries:'♈', taurus:'♉', gemini:'♊', cancer:'♋', leo:'♌', virgo:'♍',
+  libra:'♎', scorpio:'♏', sagittarius:'♐', capricorn:'♑', aquarius:'♒', pisces:'♓'
+};
+
+function toggleStarDropdown(id) {
+  const dd = document.getElementById(id);
+  if (!dd) return;
+  const isOpen = dd.classList.contains('open');
+  document.querySelectorAll('.star-dropdown.open').forEach(d => d.classList.remove('open'));
+  if (!isOpen) dd.classList.add('open');
+}
+
+function updateStarLabel(id) {
+  const dd = document.getElementById(id);
+  const label = document.getElementById(id + '-label');
+  if (!dd || !label) return;
+  const checked = Array.from(dd.querySelectorAll('input:checked')).map(i => {
+    return STAR_EMOJIS[i.value] + ' ' + i.value.charAt(0).toUpperCase() + i.value.slice(1);
+  });
+  label.textContent = checked.length ? checked.join(', ') : 'Select star signs…';
+}
+
+function getSelectedStars(id) {
+  const dd = document.getElementById(id);
+  if (!dd) return [];
+  return Array.from(dd.querySelectorAll('input:checked')).map(i => i.value);
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.star-select-wrap')) {
+    document.querySelectorAll('.star-dropdown.open').forEach(d => d.classList.remove('open'));
+  }
+});
+
+// Show/hide star sign field based on listing type (flatshare only)
+function updateStarFieldVisibility() {
+  const type = document.querySelector('.type-btn.active') ? 
+    document.querySelector('.type-btn.active').dataset.type : '';
+  const field = document.getElementById('starsign-field');
+  if (field) field.style.display = type === 'flatshare' ? '' : 'none';
+}
+
+function clearFilters() {
+  document.getElementById('search-location').value = '';
+  document.getElementById('filter-price').value = '';
+  document.getElementById('filter-beds').value = '';
+  document.getElementById('filter-region').value = '';
+  currentListingType = 'all';
+  currentRegion = 'all';
+  ['all','flatshare','sublet','rental'].forEach(t => {
+    const el = document.getElementById('lt-'+t);
+    if(el) el.classList.toggle('active', t==='all');
+  });
+  ['all','london','manchester','bristol','leeds','birmingham','edinburgh','other'].forEach(r => {
+    const el = document.getElementById('rg-'+r);
+    if(el) el.classList.toggle('active', r==='all');
+  });
+  renderListings();
+}
+
+let currentRegion = 'all';
+
+function filterRegion(region) {
+  currentRegion = region;
+  ['all','london','manchester','bristol','leeds','birmingham','edinburgh','other'].forEach(r => {
+    const el = document.getElementById('rg-'+r);
+    if(el) el.classList.toggle('active', r===region);
+  });
+  // Also sync the dropdown
+  const sel = document.getElementById('filter-region');
+  if(sel) sel.value = region === 'all' ? '' : region;
+  renderListings();
+}
+
 function filterType(type) {
   currentListingType = type;
   ['all','flatshare','sublet','rental'].forEach(t => {
@@ -1598,7 +2437,7 @@ function unlockContacts() {
   document.getElementById('unlock-banner').style.display = 'none';
   document.getElementById('unlocked-banner').style.display = 'block';
   renderListings();
-  toast('✅ Contacts unlocked for 30 days!', 'green');
+  toast('✅ Contacts unlocked! Valid for 30 days.', 'green');
 }
 
 // ══ CONTACT MODAL ══
@@ -1625,7 +2464,6 @@ function sendEnquiry() {
 
 // ══ INIT ══
 function safeInit() {
-  try { switchMainTab('browse'); } catch(e) {}
   try { showPanel('overview'); } catch(e) {}
   try { calcThursday(); } catch(e) {}
   try { renderPromoTable(); } catch(e) {}
@@ -1645,39 +2483,211 @@ if (document.readyState === 'loading') {
 }
 </script>
 
+<!-- ══════════════ PUBLIC BROWSE SCREEN ══════════════ -->
+<div id="public-browse-screen" style="display:none;flex-direction:column;min-height:100vh;background:var(--warm-white)">
+
+  <!-- Nav -->
+  <nav style="background:var(--card);border-bottom:1px solid var(--border);padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50">
+    <a onclick="goToLanding()" style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--dark);text-decoration:none;cursor:pointer">home<span style="color:#C8622A">folk</span></a>
+    <div style="display:flex;gap:0.7rem;align-items:center">
+      <span style="font-size:0.82rem;color:var(--mid)">Want to list your property?</span>
+      <button onclick="goToPost()" style="background:#1A1510;border:none;border-radius:10px;padding:0.48rem 1.1rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:600;cursor:pointer;color:#fff">Post a listing →</button>
+    </div>
+  </nav>
+
+  <!-- Hero search -->
+  <div style="background:var(--dark);padding:2rem 2.5rem 1.5rem">
+    <h2 style="font-family:'Playfair Display',serif;color:var(--cream);font-size:1.5rem;margin-bottom:0.25rem">Find your place.</h2>
+    <p style="color:#7A6E62;font-size:0.83rem;margin-bottom:1.1rem">Your next chapter starts here · New listings every Thursday</p>
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center">
+      <input type="text" id="pub-search-location" placeholder="🔍 Location or postcode…" oninput="pubFilterListings()" style="flex:1;min-width:160px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:0.58rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;color:var(--cream);outline:none">
+      <select id="pub-filter-price" onchange="pubFilterListings()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:0.58rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;color:var(--cream);outline:none">
+        <option value="">Any price</option>
+        <option value="800">Up to £800/mo</option>
+        <option value="1000">Up to £1,000/mo</option>
+        <option value="1500">Up to £1,500/mo</option>
+        <option value="2000">Up to £2,000/mo</option>
+      </select>
+      <select id="pub-filter-beds" onchange="pubFilterListings()" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:0.58rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;color:var(--cream);outline:none">
+        <option value="">Any beds</option>
+        <option value="Studio">Studio</option>
+        <option value="1">1 bed</option>
+        <option value="2">2 beds</option>
+        <option value="3">3+ beds</option>
+      </select>
+      <button onclick="pubFilterListings()" style="background:#C8622A;color:#fff;border:none;border-radius:10px;padding:0.58rem 1.2rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;font-weight:600;cursor:pointer">Search →</button>
+    </div>
+  </div>
+
+  <!-- £15/month banner -->
+  <div style="background:linear-gradient(135deg,#C8622A,#a84e1f);padding:0.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem">
+    <div style="color:#fff;font-size:0.85rem">🔒 <strong>£15/month</strong> to unlock contact details — cancel anytime</div>
+    <button onclick="showPubUnlockModal()" style="background:#fff;color:#C8622A;border:none;border-radius:8px;padding:0.4rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer">Subscribe — £15/month →</button>
+  </div>
+  <div id="pub-unlocked-banner" style="display:none;background:#E8F5EE;border-bottom:1px solid rgba(46,125,82,0.2);padding:0.65rem 2rem;font-size:0.83rem;color:#2E7D52;font-weight:600">✅ Subscribed — contact any landlord directly</div>
+
+  <!-- Category tabs -->
+  <div style="display:flex;gap:0;border-bottom:1px solid var(--border);padding:0 2rem;background:var(--card);overflow-x:auto">
+    <button class="listing-tab active" id="pub-lt-all" onclick="pubFilterType('all')">All listings</button>
+    <button class="listing-tab" id="pub-lt-flatshare" onclick="pubFilterType('flatshare')">🏠 Find Your Folk</button>
+    <button class="listing-tab" id="pub-lt-sublet" onclick="pubFilterType('sublet')">🌿 Sublets</button>
+    <button class="listing-tab" id="pub-lt-rental" onclick="pubFilterType('rental')">🏢 Short lets &amp; Rentals</button>
+  </div>
+
+  <!-- Region pills -->
+  <div style="display:flex;gap:0.5rem;padding:0.75rem 2rem;background:var(--warm-white);border-bottom:1px solid var(--border);overflow-x:auto;flex-wrap:wrap;align-items:center">
+    <span style="font-size:0.75rem;color:var(--light);font-weight:600;white-space:nowrap">Region:</span>
+    <button class="region-btn active" id="pub-rg-all" onclick="pubFilterRegion('all')">All</button>
+    <button class="region-btn" id="pub-rg-london" onclick="pubFilterRegion('london')">London</button>
+    <button class="region-btn" id="pub-rg-manchester" onclick="pubFilterRegion('manchester')">Manchester</button>
+    <button class="region-btn" id="pub-rg-bristol" onclick="pubFilterRegion('bristol')">Bristol</button>
+    <button class="region-btn" id="pub-rg-leeds" onclick="pubFilterRegion('leeds')">Leeds</button>
+    <button class="region-btn" id="pub-rg-birmingham" onclick="pubFilterRegion('birmingham')">Birmingham</button>
+    <button class="region-btn" id="pub-rg-edinburgh" onclick="pubFilterRegion('edinburgh')">Edinburgh</button>
+    <button class="region-btn" id="pub-rg-other" onclick="pubFilterRegion('other')">Other</button>
+  </div>
+
+  <div id="browse-section-heading" style="padding:1.2rem 2rem 0;display:none">
+    <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--dark)">Find your <em style="color:#C8622A">folk.</em></div>
+    <div style="font-size:0.85rem;color:var(--mid);margin-top:0.2rem">Find the household that feels like home ✨</div>
+  </div>
+  <div style="padding:0.5rem 2rem 0;font-size:0.8rem;color:var(--light)" id="pub-results-count"></div>
+
+  <!-- 3-col grid -->
+  <div id="pub-listing-grid" style="padding:1rem 2rem 3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem"></div>
+</div>
+
+<!-- ══ LISTING DETAIL MODAL ══ -->
+<div id="listing-detail-modal" style="display:none;position:fixed;inset:0;background:rgba(26,21,16,0.6);z-index:250;align-items:flex-start;justify-content:center;padding:1rem;overflow-y:auto;backdrop-filter:blur(4px)" onclick="if(event.target===this)closeListing()">
+  <div style="background:var(--card);border-radius:24px;max-width:680px;width:100%;margin:2rem auto;box-shadow:var(--shadow-lg);animation:fadeUp 0.3s ease both;overflow:hidden">
+    <!-- Photo area -->
+    <div style="height:280px;background:linear-gradient(135deg,#F0EFED,#E8E4DF);display:flex;align-items:center;justify-content:center;font-size:6rem;position:relative" id="detail-photo">
+      <div style="position:absolute;top:1rem;right:1rem;display:flex;gap:0.5rem">
+        <button onclick="toggleSaveListing()" id="save-btn" style="background:rgba(255,255,255,0.9);border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.15)">🤍</button>
+        <button onclick="closeListing()" style="background:rgba(255,255,255,0.9);border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.15)">✕</button>
+      </div>
+      <div style="position:absolute;top:1rem;left:1rem" id="detail-type-badge"></div>
+    </div>
+    <!-- Body -->
+    <div style="padding:1.8rem">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem;gap:1rem">
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--dark)" id="detail-price"></div>
+          <div style="font-size:1.05rem;font-weight:600;color:var(--dark);margin-top:0.2rem" id="detail-title"></div>
+          <div style="font-size:0.85rem;color:var(--mid);margin-top:0.2rem" id="detail-location"></div>
+        </div>
+        <div style="background:#FEF0E8;border:1px solid #F5D5C0;border-radius:10px;padding:0.6rem 1rem;text-align:center;flex-shrink:0">
+          <div style="font-size:0.68rem;color:#C8622A;font-weight:700;text-transform:uppercase">Debuts</div>
+          <div style="font-size:0.82rem;font-weight:600;color:#C8622A">📰 Thursday</div>
+        </div>
+      </div>
+      <!-- Meta tags -->
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.2rem" id="detail-meta"></div>
+      <!-- Motto -->
+      <div style="font-size:0.85rem;color:#C8622A;font-style:italic;border-left:3px solid #C8622A;padding-left:0.8rem;margin-bottom:1.2rem;line-height:1.6" id="detail-motto"></div>
+      <!-- Description -->
+      <div style="font-size:0.88rem;color:var(--mid);line-height:1.75;margin-bottom:1.4rem" id="detail-desc"></div>
+      <!-- Details grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;background:var(--cream);border-radius:14px;padding:1.1rem 1.2rem;margin-bottom:1.4rem" id="detail-grid"></div>
+      <!-- Contact button -->
+      <div id="detail-contact-wrap"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLIC UNLOCK MODAL -->
+<div id="pub-unlock-modal" style="display:none;position:fixed;inset:0;background:rgba(26,21,16,0.55);z-index:300;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px)" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:var(--card);border-radius:24px;padding:2.5rem;max-width:400px;width:100%;box-shadow:var(--shadow-lg);animation:fadeUp 0.3s ease both">
+    <div style="font-size:2.5rem;margin-bottom:0.8rem">🔑</div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:0.5rem">Subscribe to contact landlords</div>
+    <p style="font-size:0.86rem;color:var(--mid);line-height:1.6;margin-bottom:1.2rem">£15/month, cancel anytime. Message any landlord directly — flatshares, sublets and rentals.</p>
+    <div style="background:var(--cream);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.2rem;font-size:0.83rem;color:var(--mid);line-height:2.1">
+      ✅ Message any landlord directly<br>✅ All listings — flatshares, sublets, rentals<br>✅ New listings every Thursday<br>✅ Cancel anytime · Secured by Stripe
+    </div>
+    <div style="display:flex;justify-content:space-between;font-weight:700;font-size:0.95rem;margin-bottom:1.2rem;padding:0.6rem 0;border-top:1px solid var(--border)">
+      <span>Monthly subscription</span><span style="color:#C8622A">£15/month</span>
+    </div>
+    <div class="field" style="margin-bottom:0.8rem"><label>Email address</label><input type="email" id="pub-unlock-email" placeholder="you@example.com"></div>
+    <button class="btn btn-primary" onclick="pubUnlockContacts()" style="margin-bottom:0.6rem">Subscribe — £15/month →</button>
+    <button class="btn btn-ghost" onclick="document.getElementById('pub-unlock-modal').style.display='none'">Maybe later</button>
+    <div style="text-align:center;font-size:0.72rem;color:var(--light);margin-top:0.8rem">🔒 Secured by Stripe · Cancel anytime</div>
+  </div>
+</div>
+
 <!-- ══════════════ BROWSE SCREEN ══════════════ -->
 <div id="browse-screen" style="display:none;flex-direction:column;overflow-y:auto;background:var(--warm-white);flex:1">
+
+  <!-- Hero -->
   <div style="background:var(--dark);padding:2rem 2.5rem 1.5rem">
-    <h2 style="font-family:'Playfair Display',serif;color:var(--cream);font-size:1.6rem;margin-bottom:0.3rem">Find your next home</h2>
-    <p style="color:#7A6E62;font-size:0.85rem;margin-bottom:1.2rem">New listings every Thursday · 8,100+ renters already subscribed</p>
-    <div style="display:flex;gap:0.6rem;flex-wrap:wrap">
-      <input type="text" id="search-location" placeholder="🔍 Search by location…" style="flex:1;min-width:180px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:0.65rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.88rem;color:var(--cream);outline:none">
-      <select id="search-beds" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:0.65rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;color:var(--cream);outline:none">
-        <option value="">Any beds</option><option>Studio</option><option>1 bed</option><option>2 beds</option><option>3+ beds</option>
+    <h2 style="font-family:'Playfair Display',serif;color:var(--cream);font-size:1.6rem;margin-bottom:0.25rem">Find your folk. Find your place.</h2>
+    <p style="color:#7A6E62;font-size:0.84rem;margin-bottom:1.2rem">New listings every Thursday </p>
+    <!-- Search filters -->
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center">
+      <input type="text" id="search-location" placeholder="🔍 Location or postcode…" style="flex:1;min-width:160px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:0.6rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;color:var(--cream);outline:none">
+      <select id="filter-price" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:0.6rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;color:var(--cream);outline:none">
+        <option value="">Any price</option>
+        <option value="800">Up to £800/mo</option>
+        <option value="1000">Up to £1,000/mo</option>
+        <option value="1500">Up to £1,500/mo</option>
+        <option value="2000">Up to £2,000/mo</option>
       </select>
-      <button onclick="filterListings()" style="background:#C8622A;color:#fff;border:none;border-radius:10px;padding:0.65rem 1.3rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;font-weight:600;cursor:pointer">Search →</button>
+      <select id="filter-beds" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:0.6rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;color:var(--cream);outline:none">
+        <option value="">Any beds</option>
+        <option value="Studio">Studio</option>
+        <option value="1">1 bed</option>
+        <option value="2">2 beds</option>
+        <option value="3">3+ beds</option>
+      </select>
+      <select id="filter-region" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:10px;padding:0.6rem 0.8rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;color:var(--cream);outline:none">
+        <option value="">All regions</option>
+        <option value="london">London</option>
+        <option value="manchester">Manchester</option>
+        <option value="bristol">Bristol</option>
+        <option value="leeds">Leeds</option>
+        <option value="birmingham">Birmingham</option>
+        <option value="edinburgh">Edinburgh</option>
+        <option value="other">Other</option>
+      </select>
+      <button onclick="filterListings()" style="background:#C8622A;color:#fff;border:none;border-radius:10px;padding:0.6rem 1.2rem;font-family:'DM Sans',sans-serif;font-size:0.86rem;font-weight:600;cursor:pointer">Search →</button>
+      <button onclick="clearFilters()" style="background:rgba(255,255,255,0.1);color:#9A8E82;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0.6rem 0.9rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;cursor:pointer">Clear</button>
     </div>
   </div>
 
   <!-- Unlock banner -->
-  <div id="unlock-banner" style="background:linear-gradient(135deg,#C8622A,#a84e1f);padding:0.8rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem">
-    <div style="color:#fff;font-size:0.85rem">🔒 <strong>Unlock contact details</strong> — pay £10 once to message any landlord for 30 days</div>
-    <button onclick="showUnlockModal()" style="background:#fff;color:#C8622A;border:none;border-radius:8px;padding:0.45rem 1.1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer">Unlock now — £10 →</button>
+  <div id="unlock-banner" style="background:linear-gradient(135deg,#C8622A,#a84e1f);padding:0.75rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem">
+    <div style="color:#fff;font-size:0.85rem">🔒 <strong>Unlock contact details</strong> — unlock contacts from £15/month to message any landlord</div>
+    <button onclick="showUnlockModal()" style="background:#fff;color:#C8622A;border:none;border-radius:8px;padding:0.42rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;cursor:pointer">Unlock now — £15/mo →</button>
   </div>
-  <div id="unlocked-banner" style="display:none;background:#E8F5EE;border-bottom:1px solid rgba(46,125,82,0.2);padding:0.7rem 2.5rem;font-size:0.83rem;color:#2E7D52;font-weight:600">✅ Contacts unlocked — message any landlord for 30 days</div>
+  <div id="unlocked-banner" style="display:none;background:#E8F5EE;border-bottom:1px solid rgba(46,125,82,0.2);padding:0.65rem 2.5rem;font-size:0.83rem;color:#2E7D52;font-weight:600">✅ Contacts unlocked — message any landlord for 30 days</div>
 
-  <!-- Type tabs -->
-  <div style="display:flex;gap:0;border-bottom:1px solid var(--border);padding:0 2.5rem;background:var(--card)">
+  <!-- Category tabs -->
+  <div style="display:flex;gap:0;border-bottom:1px solid var(--border);padding:0 2rem;background:var(--card);overflow-x:auto">
     <button class="listing-tab active" id="lt-all" onclick="filterType('all')">All listings</button>
-    <button class="listing-tab" id="lt-flatshare" onclick="filterType('flatshare')">🏠 Flatshares</button>
+    <button class="listing-tab" id="lt-flatshare" onclick="filterType('flatshare')">🏠 Find Your Folk</button>
     <button class="listing-tab" id="lt-sublet" onclick="filterType('sublet')">🌿 Sublets</button>
-    <button class="listing-tab" id="lt-rental" onclick="filterType('rental')">🏢 Rentals</button>
+    <button class="listing-tab" id="lt-rental" onclick="filterType('rental')">🏢 Short lets &amp; Rentals</button>
   </div>
 
-  <!-- Grid -->
-  <div id="listing-grid" style="padding:2rem 2.5rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.3rem"></div>
-</div>
+  <!-- Region sub-nav (shows when a category is selected) -->
+  <div id="region-nav" style="display:flex;gap:0.5rem;padding:0.8rem 2rem;background:var(--warm-white);border-bottom:1px solid var(--border);overflow-x:auto;flex-wrap:wrap">
+    <span style="font-size:0.75rem;color:var(--light);font-weight:600;align-self:center;margin-right:0.3rem">Region:</span>
+    <button class="region-btn active" id="rg-all" onclick="filterRegion('all')">All</button>
+    <button class="region-btn" id="rg-london" onclick="filterRegion('london')">London</button>
+    <button class="region-btn" id="rg-manchester" onclick="filterRegion('manchester')">Manchester</button>
+    <button class="region-btn" id="rg-bristol" onclick="filterRegion('bristol')">Bristol</button>
+    <button class="region-btn" id="rg-leeds" onclick="filterRegion('leeds')">Leeds</button>
+    <button class="region-btn" id="rg-birmingham" onclick="filterRegion('birmingham')">Birmingham</button>
+    <button class="region-btn" id="rg-edinburgh" onclick="filterRegion('edinburgh')">Edinburgh</button>
+    <button class="region-btn" id="rg-other" onclick="filterRegion('other')">Other</button>
+  </div>
 
+  <!-- Results count -->
+  <div style="padding:1rem 2rem 0;font-size:0.8rem;color:var(--light)" id="results-count"></div>
+
+  <!-- Grid — 3 columns -->
+  <div id="listing-grid" style="padding:1rem 2rem 2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem"></div>
+
+</div>
 <!-- UNLOCK MODAL -->
 <div id="unlock-modal" style="display:none;position:fixed;inset:0;background:rgba(26,21,16,0.55);z-index:200;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px)" onclick="if(event.target===this)this.style.display='none'">
   <div style="background:var(--card);border-radius:24px;padding:2.5rem;max-width:400px;width:100%;box-shadow:var(--shadow-lg);animation:fadeUp 0.3s ease both">
@@ -1687,8 +2697,8 @@ if (document.readyState === 'loading') {
     <div style="background:var(--cream);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.2rem;font-size:0.83rem;color:var(--mid);line-height:2">
       ✅ Message any landlord directly<br>✅ All contacts unlocked for 30 days<br>✅ Flatshares, sublets &amp; rentals<br>✅ Secure payment via Stripe
     </div>
-    <div style="display:flex;justify-content:space-between;font-weight:700;font-size:0.95rem;margin-bottom:1.2rem;padding:0.6rem 0;border-top:1px solid var(--border)"><span>One-off fee</span><span style="color:var(--accent)">£10.00</span></div>
-    <button class="btn btn-primary" onclick="unlockContacts()" style="margin-bottom:0.6rem">Pay £10 &amp; unlock contacts →</button>
+    <div style="display:flex;justify-content:space-between;font-weight:700;font-size:0.95rem;margin-bottom:1.2rem;padding:0.6rem 0;border-top:1px solid var(--border)"><span>Monthly subscription</span><span style="color:var(--accent)">£15/month</span></div>
+    <button class="btn btn-primary" onclick="unlockContacts()" style="margin-bottom:0.6rem">Pay £15/month &amp; unlock contacts →</button>
     <button class="btn btn-ghost" onclick="document.getElementById('unlock-modal').style.display='none'">Maybe later</button>
   </div>
 </div>
@@ -1960,7 +2970,7 @@ KEY FACTS ABOUT NESTIO:
 - Apartment Sublets are FREE. For short-term subletting.
 - All listings run for 7 days.
 - All listings DEBUT on Thursday — they go live when the Thursday newsletter sends.
-- The Thursday newsletter goes to 8,100+ subscribers every week.
+- The Thursday newsletter goes to subscribers every week.
 - Paid listings appear at the top of search results (featured).
 - Promo codes can make flatshare listings free. Users enter them at checkout.
 - After signing up, users can manage listings, view enquiries, and post from their dashboard.
@@ -2090,11 +3100,11 @@ async function getAIResponse() {
 
   // Smart local answers - no API key needed
   if (q.includes('price') || q.includes('cost') || q.includes('how much')) {
-    reply = 'Our fees are simple:\n\n🏠 Flatshare — £10 one-off\n🏢 Apartment Rental — £15 one-off\n🌿 Sublet — £5 one-off\n\nAll listings run 7 days and debut in Thursday newsletter to 8,100+ renters! Use code HOMEFOLK for a free flatshare listing 🎉';
+    reply = 'Our fees are simple:\n\n🏠 Flatshare — £10 one-off\n🏢 Apartment Rental — £15 one-off\n🌿 Sublet — £5 one-off\n\nAll listings run 7 days and debut in Thursday newsletter to renters renters! Use code HOMEFOLK for a free flatshare listing 🎉';
   } else if (q.includes('thursday') || q.includes('debut') || q.includes('when')) {
-    reply = 'Every listing debuts on Thursday when our newsletter sends to 8,100+ subscribers. Post any day — it goes live that Thursday! 📰';
+    reply = 'Every listing debuts on Thursday when our newsletter sends to subscribers. Post any day — it goes live that Thursday! 📰';
   } else if (q.includes('newsletter') || q.includes('subscribe')) {
-    reply = 'Our Thursday newsletter reaches 8,100+ renters every week. All listings included automatically. You can write a personal intro from your dashboard too! 📬';
+    reply = 'Our Thursday newsletter reaches renters every week. All listings included automatically. You can write a personal intro from your dashboard too! 📬';
   } else if (q.includes('photo') || q.includes('picture')) {
     reply = 'You can upload up to 20 photos for paid listings, 10 for free sublets. Drag and drop straight from your device! 📷';
   } else if (q.includes('promo') || q.includes('discount') || q.includes('code') || q.includes('free')) {
@@ -2178,5 +3188,38 @@ setTimeout(() => {
 }, 4000);
 </script>
 
-</body>
-</html>
+
+<!-- ══ COOKIE CONSENT ══ -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1A1510;color:var(--cream);padding:1rem 2rem;z-index:600;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;box-shadow:0 -4px 20px rgba(0,0,0,0.3)">
+  <div style="font-size:0.83rem;color:#9A8E82;max-width:600px;line-height:1.6">
+    🍪 We use cookies to improve your experience and remember your preferences. By continuing you agree to our 
+    <span onclick="showTerms()" style="color:#C8622A;cursor:pointer;text-decoration:underline">Privacy Policy</span>.
+  </div>
+  <div style="display:flex;gap:0.7rem">
+    <button onclick="acceptCookies()" style="background:#C8622A;color:#fff;border:none;border-radius:9px;padding:0.55rem 1.3rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:600;cursor:pointer">Accept</button>
+    <button onclick="declineCookies()" style="background:transparent;color:#7A6E62;border:1px solid #3A3530;border-radius:9px;padding:0.55rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.84rem;cursor:pointer">Decline</button>
+  </div>
+</div>
+
+<!-- ══ TERMS & PRIVACY MODAL ══ -->
+<div id="terms-modal" style="display:none;position:fixed;inset:0;background:rgba(26,21,16,0.6);z-index:700;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px)" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:var(--card);border-radius:20px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:var(--shadow-lg);animation:fadeUp 0.3s ease both">
+    <div style="padding:1.8rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--card);z-index:1">
+      <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700" id="terms-title">Terms & Conditions</div>
+      <button onclick="document.getElementById('terms-modal').style.display='none'" style="background:var(--cream);border:1px solid var(--border);border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:0.9rem">✕</button>
+    </div>
+    <div style="padding:1.8rem;font-size:0.86rem;color:var(--mid);line-height:1.8" id="terms-body">
+      <h3 style="font-family:'Playfair Display',serif;color:var(--dark);margin-bottom:0.5rem">Homefolk Terms of Service</h3>
+      <p>Last updated: March 2026</p>
+      <p style="margin-top:1rem"><strong style="color:var(--dark)">1. Listing fees</strong><br>Flatshare listings are £10, apartment rentals £15, and sublets £5 — all one-off payments per listing. Listings run for 7 days from their Thursday debut date.</p>
+      <p style="margin-top:1rem"><strong style="color:var(--dark)">2. Tenant subscription</strong><br>Tenants pay £15/month to access landlord contact details. Subscriptions auto-renew monthly and can be cancelled at any time.</p>
+      <p style="margin-top:1rem"><strong style="color:var(--dark)">3. Thursday debut</strong><br>All listings debut exclusively on Thursday when the newsletter sends to subscribers. Listings posted any day of the week will go live that Thursday.</p>
+      <p style="margin-top:1rem"><strong style="color:var(--dark)">4. Accuracy of listings</strong><br>Landlords are responsible for the accuracy of their listings. Homefolk does not verify properties and accepts no liability for inaccurate information.</p>
+      <p style="margin-top:1rem"><strong style="color:var(--dark)">5. Refunds</strong><br>Listing fees are non-refundable once a listing has been published. Tenant subscriptions can be cancelled before the next billing date.</p>
+      <p style="margin-top:1rem"><strong style="color:var(--dark)">6. Prohibited content</strong><br>Listings must be genuine UK properties. Fraudulent, misleading or illegal listings will be removed without refund.</p>
+      <h3 style="font-family:'Playfair Display',serif;color:var(--dark);margin:1.5rem 0 0.5rem">Privacy Policy</h3>
+      <p><strong style="color:var(--dark)">Data we collect</strong><br>Name, email address, property details you submit, and payment information (processed securely by Stripe — we never store card details).</p>
+      <p style="margin-top:1rem"><strong style="color:var(--dark)">How we use it</strong><br>To publish your listing, send the Thursday newsletter, process payments, and send enquiry notifications. We never sell your data.</p>
+      <p style="margin-top:1rem"><strong style="color:var(--dark)">Cookies</strong><br>We use essential cookies to keep you signed in and remember your preferences. No advertising cookies.</p>
+      <p style="margin-top:1rem"><strong style="color:var(--dark)">Your rights</strong><br>You can request deletion of your account and data at any time by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87efe2ebebe8c7efe8eae2e1e8ebeca9e4e8a9f2ec">[email&#160;protected]</a></p>
+      <p style="margin-top:1rem"><strong style="c
