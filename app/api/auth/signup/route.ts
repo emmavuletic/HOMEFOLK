@@ -41,11 +41,6 @@ export async function POST(req: NextRequest) {
     }, { onConflict: 'email' })
   }
 
-  // Send verification email via Supabase (triggers built-in email)
-  await supabase.auth.admin.generateLink({
-    type: 'signup',
-    email: email.toLowerCase().trim(),
-  })
 
   return NextResponse.json({ success: true, message: 'Account created. Please check your email to verify.' })
 }
