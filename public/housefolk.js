@@ -1050,6 +1050,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Check Stripe return params
   checkSuccessParam()
 
+  // Direct deep-link: ?goto=post
+  if (new URLSearchParams(window.location.search).get('goto') === 'post') {
+    goToPost()
+  }
+
   // Close dropdowns on outside click
   document.addEventListener('click', e => {
     document.querySelectorAll('.star-dropdown.open, .star-sign-dropdown.open').forEach(d => {
