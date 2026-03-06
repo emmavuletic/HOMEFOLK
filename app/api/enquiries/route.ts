@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
   // Email landlord — no contact details shown
-  const landlordData = listing.users as { email: string; first_name: string } | null
+  const landlordData = (listing.users as unknown as { email: string; first_name: string }[] | null)?.[0] ?? null
   if (landlordData?.email) {
     const tenantName = `${profile.first_name} ${profile.last_name}`.trim()
     await resend.emails.send({
