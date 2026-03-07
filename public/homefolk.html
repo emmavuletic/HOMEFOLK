@@ -369,11 +369,11 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
 .landing-screen { min-height:100vh; display:none; flex-direction:column; background:var(--warm-white); }
 .landing-screen.active { display:flex; }
 .landing-nav { height:62px; background:var(--card); border-bottom:1px solid var(--border); padding:0 2.5rem; display:flex; align-items:center; justify-content:space-between; }
-.landing-logo { font-family:"Playfair Display",serif; font-size:1.5rem; font-weight:700; color:var(--dark); text-decoration:none; }
+.landing-logo { font-family:"Playfair Display",serif; font-size:2rem; font-weight:400; color:#000; text-decoration:none; letter-spacing:0.08em; }
 .landing-logo span { color:#f2937c; }
 .landing-hero { background:#F0EFED; padding:5rem 2.5rem 4rem; text-align:center; position:relative; overflow:hidden; }
 .landing-hero::before { content:''; position:absolute; inset:0; background:none; pointer-events:none; }
-.landing-hero h1 { font-family:"Playfair Display",serif; font-size:clamp(2.2rem,5vw,3.5rem); color:var(--dark); letter-spacing:-1.5px; line-height:1.1; margin-bottom:1rem; position:relative; }
+.landing-hero h1 { font-family:"Playfair Display",serif; font-size:clamp(1.6rem,3.5vw,2.4rem); color:var(--dark); letter-spacing:-0.5px; line-height:1.1; margin-bottom:1rem; position:relative; font-weight:400; }
 .landing-hero h1 em { font-style:italic; color:#f2937c; }
 .landing-hero p { color:#5A4F45; font-size:1rem; line-height:1.7; max-width:500px; margin:0 auto 2.5rem; position:relative; }
 .landing-cta-row { display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; position:relative; }
@@ -465,7 +465,7 @@ body { font-family: 'DM Sans', sans-serif; background: var(--warm-white); color:
 
   <div class="landing-hero">
     <h1>Find your<br><em>place.</em></h1>
-    <p>Browse free · Sign up to message landlords directly through Housefolk.</p>
+    <p>Browse free · Sign up to message landlords directly.</p>
     <div class="landing-cta-row">
       <div class="cta-card browse" onclick="goToBrowse()">
         <span class="cta-icon">🔍</span>
