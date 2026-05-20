@@ -50,7 +50,7 @@ export default function WaitlistPage() {
               Opening soon
             </div>
             <h1 className="wl-h1">Homes for people who notice <em>good light.</em></h1>
-            <p className="wl-p">Housefolk connects design-aware renters with landlords who care — about original floors, south-facing windows, and rooms that feel like somewhere.</p>
+            <p className="wl-p">Housefolk connects design-aware renters with landlords who care.</p>
             <div className="wl-proofs">
               <div className="wl-proof"><span className="wl-proof-icon">✦</span>Curated listings from landlords who get it</div>
               <div className="wl-proof"><span className="wl-proof-icon">✉</span>New homes, straight to your inbox</div>
@@ -154,7 +154,7 @@ const css = `
   }
   .wl-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 400;
     letter-spacing: 0.08em;
     color: #1A1A1A;
@@ -190,7 +190,7 @@ const css = `
   }
   .wl-h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
     font-weight: 400;
     line-height: 1.12;
     letter-spacing: -0.5px;
